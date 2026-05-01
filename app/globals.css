@@ -1,5 +1,20 @@
 @import "tailwindcss";
 
+/* ── Load Coolvetica dari folder public/fonts ── */
+@font-face {
+  font-family: "Coolvetica";
+  src: url("/fonts/coolvetica-rg-it.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Coolvetica";
+  src: url("/fonts/coolvetica-rg.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -8,8 +23,78 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-reddit-sans);
+  --font-serif: var(--font-merriweather);
+  --font-coolvetica: "Coolvetica", sans-serif;
+  --font-mono: ui-monospace, monospace;
+
+  /* ── Neutral ── */
+  --color-neutral-50: #ffffff;
+  --color-neutral-600: #000000;
+
+  /* ── Blue Dark ── */
+  --color-blue-dark-50: #e0ebff;
+  --color-blue-dark-75: #96adf7;
+  --color-blue-dark-100: #6684f4;
+  --color-blue-dark-200: #2b59ef;
+  --color-blue-dark-300: #003cec;
+  --color-blue-dark-400: #002ba9;
+  --color-blue-dark-500: #002590;
+
+  /* ── Blue Light ── */
+  --color-blue-light-50: #e6f7fb;
+  --color-blue-light-75: #96def7;
+  --color-blue-light-100: #6bcdf2;
+  --color-blue-light-200: #00bbd8;
+  --color-blue-light-300: #009789;
+  --color-blue-light-400: #007b07;
+  --color-blue-light-500: #006b12;
+
+  /* ── Coral ── */
+  --color-coral-50: #fef5f3;
+  --color-coral-75: #ffd5cf;
+  --color-coral-100: #f6b4a7;
+  --color-coral-200: #ef9994;
+  --color-coral-300: #f07989;
+  --color-coral-400: #a86a60;
+  --color-coral-500: #8c3554;
+
+  /* ── Pink ── */
+  --color-pink-50: #fbf5fc;
+  --color-pink-75: #f4c8f2;
+  --color-pink-100: #e98cf4;
+  --color-pink-200: #d77ce2;
+  --color-pink-300: #9669fd;
+  --color-pink-400: #7b52e0;
+  --color-pink-500: #8376c9;
+
+  /* ── Lavender ── */
+  --color-lavender-50: #fbf9fd;
+  --color-lavender-75: #f4f2fd;
+  --color-lavender-100: #e3e0fd;
+  --color-lavender-200: #d3cefd;
+  --color-lavender-300: #d4c2d9;
+  --color-lavender-400: #9488a3;
+  --color-lavender-500: #7b6e8a;
+
+  /* ── Yellow ── */
+  --color-yellow-50: #fefefd;
+  --color-yellow-75: #fafae4;
+  --color-yellow-100: #f9f7e8;
+  --color-yellow-200: #f6f4c7;
+  --color-yellow-300: #f4f2bc;
+  --color-yellow-400: #aba984;
+  --color-yellow-500: #95994a;
+
+  /* ── Gradients ── */
+  --gradient-blue: linear-gradient(135deg, #003cec 0%, #009789 100%);
+  --gradient-pastel: linear-gradient(
+    135deg,
+    #f07989 0%,
+    #9669fd 33%,
+    #d4c2d9 66%,
+    #f4f2bc 100%
+  );
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,5 +107,151 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-reddit-sans), Arial, Helvetica, sans-serif;
+}
+
+/* ════════════════════════════════════════
+   TYPOGRAPHY CLASSES
+   ════════════════════════════════════════ */
+
+/* Coolvetica Headings */
+.heading-coolvetica-1 {
+  font-family: "Coolvetica", sans-serif;
+  font-size: 96px;
+  line-height: 86px;
+  font-style: italic;
+  font-weight: 400;
+}
+.heading-coolvetica-2 {
+  font-family: "Coolvetica", sans-serif;
+  font-size: 64px;
+  line-height: 86px;
+  font-style: italic;
+  font-weight: 400;
+}
+.heading-coolvetica-3 {
+  font-family: "Coolvetica", sans-serif;
+  font-size: 48px;
+  line-height: 86px;
+  font-style: italic;
+  font-weight: 400;
+}
+.heading-coolvetica-4 {
+  font-family: "Coolvetica", sans-serif;
+  font-size: 30px;
+  line-height: 64px;
+  font-style: italic;
+  font-weight: 400;
+}
+.heading-coolvetica-5 {
+  font-family: "Coolvetica", sans-serif;
+  font-size: 24px;
+  line-height: 36px;
+  font-style: italic;
+  font-weight: 400;
+}
+.heading-coolvetica-6 {
+  font-family: "Coolvetica", sans-serif;
+  font-size: 20px;
+  line-height: 32px;
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* Merriweather Headings */
+.heading-merriweather-1 {
+  font-family: var(--font-merriweather), serif;
+  font-size: 96px;
+  line-height: 86px;
+  font-style: italic;
+  font-weight: 700;
+}
+.heading-merriweather-2 {
+  font-family: var(--font-merriweather), serif;
+  font-size: 64px;
+  line-height: 86px;
+  font-style: italic;
+  font-weight: 700;
+}
+.heading-merriweather-3 {
+  font-family: var(--font-merriweather), serif;
+  font-size: 48px;
+  line-height: 86px;
+  font-style: italic;
+  font-weight: 700;
+}
+.heading-merriweather-4 {
+  font-family: var(--font-merriweather), serif;
+  font-size: 30px;
+  line-height: 64px;
+  font-style: italic;
+  font-weight: 700;
+}
+.heading-merriweather-5 {
+  font-family: var(--font-merriweather), serif;
+  font-size: 24px;
+  line-height: 36px;
+  font-style: italic;
+  font-weight: 700;
+}
+.heading-merriweather-6 {
+  font-family: var(--font-merriweather), serif;
+  font-size: 20px;
+  line-height: 32px;
+  font-style: italic;
+  font-weight: 700;
+}
+
+/* Reddit Sans — Body */
+.body-large-bold {
+  font-family: var(--font-reddit-sans), sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 700;
+}
+.body-large-regular {
+  font-family: var(--font-reddit-sans), sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+}
+.body-small-bold {
+  font-family: var(--font-reddit-sans), sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 700;
+}
+.body-small-regular {
+  font-family: var(--font-reddit-sans), sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+/* Reddit Sans — Title */
+.title-bold {
+  font-family: var(--font-reddit-sans), sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 700;
+}
+.title-regular {
+  font-family: var(--font-reddit-sans), sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+}
+
+/* Reddit Sans — Caption */
+.caption-bold {
+  font-family: var(--font-reddit-sans), sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 700;
+}
+.caption-regular {
+  font-family: var(--font-reddit-sans), sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
 }
