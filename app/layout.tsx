@@ -27,7 +27,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id">
-      <body className={`${merriweather.variable} ${redditSans.variable}`}>
+      <body
+        className={`${merriweather.variable} ${redditSans.variable} bg-white`}
+      >
         {children}
       </body>
     </html>
