@@ -1,30 +1,61 @@
-"use client";
-
-import Link from "next/link";
+import * as React from "react";
+import Typography from "@/components/ui/Typography";
+import Button from "@/components/ui/Button";
+import Image from "next/image";
 
 export default function Navbar() {
   return (
-    <nav className="w-full px-6 py-3 flex items-center justify-between border-b border-gray-200 bg-white sticky top-0 z-50">
-      {/* Logo */}
-      <Link href="/" className="flex flex-col leading-tight">
-        <span className="title-bold text-neutral-600">Satu Pintu</span>
-        <span className="title-bold text-neutral-600">HMSI</span>
-      </Link>
+    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-white">
+      {/* ── Background SVG gradient ── */}
+      <Image
+        src="/images/navbar-gradient.svg"
+        alt=""
+        fill
+        className="object-cover pointer-events-none"
+        aria-hidden
+      />
+      <div className="max-w-7xl mx-auto px-6 md:px-8 h-16 flex items-center justify-between">
+        {/* Logo */}
+        <div className="flex flex-col leading-tight">
+          <Typography
+            variant="h6"
+            font="merriweather"
+            weight="bold"
+            color="neutral-600"
+            italic
+          >
+            Satu Pintu
+          </Typography>
+          <Typography
+            variant="h6"
+            font="merriweather"
+            weight="bold"
+            color="neutral-600"
+            italic
+          >
+            HMSI
+          </Typography>
+        </div>
 
-      {/* Buttons */}
-      <div className="flex items-center gap-3">
-        <Link
-          href="/masuk"
-          className="body-small-regular px-5 py-2 border border-neutral-600 rounded-full hover:bg-gray-50 transition-colors"
-        >
-          Masuk
-        </Link>
-        <Link
-          href="/daftar"
-          className="body-small-regular px-5 py-2 bg-neutral-600 text-white rounded-full hover:opacity-80 transition-opacity"
-        >
-          Daftar
-        </Link>
+        {/* Actions */}
+        <div className="flex items-center gap-3">
+          <Button
+            variant="outline-black"
+            size="md"
+            rounded="lg"
+            style={{ color: "#000", outlineColor: "#000" }}
+          >
+            Masuk
+          </Button>
+          <Button
+            variant="primary"
+            size="md"
+            rounded="lg"
+            style={{ background: "#000" }}
+          >
+            Daftar
+          </Button>
+        </div>
       </div>
     </nav>
   );

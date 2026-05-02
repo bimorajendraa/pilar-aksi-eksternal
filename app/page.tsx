@@ -1,11 +1,12 @@
+// page.tsx (contoh penggunaan)
 import Navbar from "@/components/sections/Navbar";
-import Hero from "@/components/sections/Hero";
+import HeroSection from "@/components/sections/HeroSection";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <main className="bg-white">
+    <main>
       <Navbar />
-      <Hero />
+      <HeroSection />
     </main>
   );
 }

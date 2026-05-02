@@ -48,6 +48,8 @@ const variantMap = {
   "gradient-pastel":
     "bg-gradient-to-r from-coral-300 via-pink-300 to-lavender-300 text-white hover:opacity-90 active:opacity-80",
   danger: "bg-coral-300 text-white hover:bg-coral-400 active:bg-coral-500",
+  "outline-black":
+    "border-2 border-black text-black bg-transparent hover:bg-black/5 active:bg-black/10",
 } as const;
 
 // ─── Sizes ───────────────────────────────────────────────────────────────────

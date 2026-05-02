@@ -4,8 +4,8 @@ import "./globals.css";
 
 const merriweather = Merriweather({
   subsets: ["latin"],
-  weight: ["700"],
-  style: ["italic"],
+  weight: ["400", "700"],
+  style: ["normal", "italic"],
   variable: "--font-merriweather",
 });
 
@@ -26,12 +26,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id">
-      <body
-        className={`${merriweather.variable} ${redditSans.variable} bg-white`}
-      >
-        {children}
-      </body>
+    <html
+      lang="id"
+      className={`${merriweather.variable} ${redditSans.variable}`}
+    >
+      <body className="bg-white">{children}</body>
     </html>
   );
 }

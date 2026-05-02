@@ -33,6 +33,8 @@
   --font-serif: var(--font-merriweather);
   --font-coolvetica: "Coolvetica", sans-serif;
   --font-mono: ui-monospace, monospace;
+  --font-merriweather: var(--font-merriweather);
+  --font-body: var(--font-reddit-sans);
 
   /* ── Neutral ── */
   --color-neutral-50: #ffffff;
@@ -100,6 +102,13 @@
     #9669fd 33%,
     #d4c2d9 66%,
     #f4f2bc 100%
+  );
+
+  --gradient-navbar: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--color-blue-dark-300) 35%, transparent) 0%,
+    color-mix(in srgb, var(--color-blue-dark-200) 16%, transparent) 83%,
+    transparent 100%
   );
 }
 
