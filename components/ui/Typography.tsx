@@ -18,6 +18,7 @@ export const TypographyVariant = {
 // ─── Font family ─────────────────────────────────────────────────────────────
 export const FontVariant = {
   coolvetica: "font-coolvetica", // Coolvetica — heading display
+  "coolvetica-regular": "font-coolvetica-regular",
   merriweather: "font-merriweather", // Merriweather — heading serif
   body: "font-body", // Reddit Sans — body
 } as const;
@@ -155,35 +156,69 @@ export default function Typography<T extends React.ElementType = "p">({
 
   const strokeStyle: React.CSSProperties = isStroke
     ? {
-        WebkitTextStroke: `${strokeValue} ${strokeColor}`,
+        WebkitTextStroke: `1px ${strokeColor}`,
         paintOrder: "stroke fill",
+        filter: `
+        drop-shadow(0 0 ${strokeValue} ${strokeColor})
+        drop-shadow(0 0 ${strokeValue} ${strokeColor})
+        drop-shadow(0 0 ${strokeValue} ${strokeColor})
+        drop-shadow(0 0 ${strokeValue} ${strokeColor})
+      `,
       }
     : {};
 
   return (
-    <Component
-      style={
-        {
-          "--shadow-color": shadowColor,
-          ...strokeStyle,
-          ...gradientStyle,
-          ...((props as any).style || {}),
-        } as React.CSSProperties
-      }
-      className={cn(
-        FontVariant[font],
-        TypographyVariant[variant],
-        FontWeight[weight],
-        !isGradient && TextColor[color],
-        align && TextAlign[align],
-        italic && "italic",
-        truncate && "truncate",
-        shadow && FontShadowClassMap[shadow],
-        className,
+    <>
+      {/* SVG filter untuk outline ke luar */}
+      {isStroke && (
+        <svg width="0" height="0" className="absolute">
+          <defs>
+            <filter id="text-outline">
+              <feMorphology
+                in="SourceAlpha"
+                result="expanded"
+                operator="dilate"
+                radius={strokeValue.replace("px", "")}
+              />
+              <feFlood floodColor={strokeColor} result="color" />
+              <feComposite
+                in="color"
+                in2="expanded"
+                operator="in"
+                result="outline"
+              />
+              <feMerge>
+                <feMergeNode in="outline" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+          </defs>
+        </svg>
       )}
-      {...props}
-    >
-      {children}
-    </Component>
+      <Component
+        style={
+          {
+            "--shadow-color": shadowColor,
+            ...gradientStyle,
+            ...(isStroke ? { filter: "url(#text-outline)" } : {}),
+            ...((props as any).style || {}),
+          } as React.CSSProperties
+        }
+        className={cn(
+          FontVariant[font],
+          TypographyVariant[variant],
+          FontWeight[weight],
+          !isGradient && TextColor[color],
+          align && TextAlign[align],
+          italic && "italic",
+          truncate && "truncate",
+          shadow && FontShadowClassMap[shadow],
+          className,
+        )}
+        {...props}
+      >
+        {children}
+      </Component>
+    </>
   );
 }

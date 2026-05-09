@@ -43,7 +43,7 @@ export default function HeroSection() {
           {/* "Satu Pintu" */}
           <Typography
             variant="h1"
-            font="coolvetica"
+            font="coolvetica-regular"
             italic
             isGradient
             gradientPreset="blue-vertical"

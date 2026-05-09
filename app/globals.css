@@ -21,6 +21,13 @@
   font-weight: 400;
 }
 
+@font-face {
+  font-family: "Coolvetica Regular";
+  src: url("/fonts/coolvetica-regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -32,6 +39,7 @@
   --font-sans: var(--font-reddit-sans);
   --font-serif: var(--font-merriweather);
   --font-coolvetica: "Coolvetica", sans-serif;
+  --font-coolvetica-regular: "Coolvetica Regular", sans-serif;
   --font-mono: ui-monospace, monospace;
   --font-merriweather: var(--font-merriweather);
   --font-body: var(--font-reddit-sans);
