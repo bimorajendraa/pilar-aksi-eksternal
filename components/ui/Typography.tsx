@@ -58,6 +58,18 @@ export const FontShadowClassMap = {
   lg: "drop-shadow-[0_12px_0.1px_var(--shadow-color)]",
 } as const;
 
+// ─── Gradient presets ─────────────────────────────────────────────────────────
+export const GradientPreset = {
+  blue: "linear-gradient(90deg, var(--color-blue-dark-300) 0%, var(--color-blue-light-200) 100%)",
+  "blue-vertical":
+    "linear-gradient(180deg, var(--color-blue-dark-300) 0%, var(--color-blue-light-200) 100%)",
+  "blue-hero": "linear-gradient(180deg, #00cfff 0%, #0066ff 45%, #0022cc 100%)",
+  pastel:
+    "linear-gradient(135deg, var(--color-coral-300) 0%, var(--color-pink-300) 33%, var(--color-lavender-300) 66%, var(--color-yellow-300) 100%)",
+  "pastel-vertical":
+    "linear-gradient(180deg, var(--color-coral-300) 0%, var(--color-pink-300) 33%, var(--color-lavender-300) 66%, var(--color-yellow-300) 100%)",
+} as const;
+
 // ─── Default HTML tags per variant ───────────────────────────────────────────
 const defaultTags: Record<keyof typeof TypographyVariant, React.ElementType> = {
   h1: "h1",
@@ -92,6 +104,7 @@ type TypographyProps<T extends React.ElementType> = {
   // Gradient fill
   isGradient?: boolean;
   gradientValue?: string;
+  gradientPreset?: keyof typeof GradientPreset;
 
   // Shadow
   shadow?: keyof typeof FontShadowClassMap;
@@ -115,7 +128,8 @@ export default function Typography<T extends React.ElementType = "p">({
   strokeValue = "6px",
   strokeColor = "white",
   isGradient = false,
-  gradientValue = "linear-gradient(135deg, #003cec 0%, #009789 100%)",
+  gradientValue,
+  gradientPreset,
   shadow,
   shadowColor = "#000000",
   className,
@@ -124,9 +138,15 @@ export default function Typography<T extends React.ElementType = "p">({
   Omit<React.ComponentPropsWithoutRef<T>, keyof TypographyProps<T>>) {
   const Component = as || defaultTags[variant] || "p";
 
+  const resolvedGradient =
+    gradientValue ??
+    (gradientPreset
+      ? GradientPreset[gradientPreset]
+      : "linear-gradient(135deg, #003cec 0%, #009789 100%)");
+
   const gradientStyle: React.CSSProperties = isGradient
     ? {
-        backgroundImage: gradientValue,
+        backgroundImage: resolvedGradient,
         WebkitBackgroundClip: "text",
         backgroundClip: "text",
         color: "transparent",

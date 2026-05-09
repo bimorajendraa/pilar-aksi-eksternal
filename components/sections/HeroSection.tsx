@@ -46,7 +46,7 @@ export default function HeroSection() {
             font="coolvetica"
             italic
             isGradient
-            gradientValue="linear-gradient(180deg, #00cfff 0%, #0066ff 45%, #0022cc 100%)"
+            gradientPreset="blue-vertical"
             isStroke
             strokeValue="8px"
             strokeColor="white"
@@ -62,7 +62,7 @@ export default function HeroSection() {
             font="merriweather"
             italic
             isGradient
-            gradientValue="linear-gradient(180deg, #60a5fa 0%, #2563eb 50%, #1e40af 100%)"
+            gradientPreset="blue-vertical"
             isStroke
             strokeValue="8px"
             strokeColor="white"
