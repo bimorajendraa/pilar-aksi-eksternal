@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from "react";
 import { cn } from "@/lib/utils";
 
@@ -137,7 +139,11 @@ export default function Typography<T extends React.ElementType = "p">({
   ...props
 }: TypographyProps<T> &
   Omit<React.ComponentPropsWithoutRef<T>, keyof TypographyProps<T>>) {
+  const filterId = React.useId().replace(/:/g, "");
   const Component = as || defaultTags[variant] || "p";
+
+  const filterIdStr = `text-outline-${filterId}`;
+  const filterUrl = `url(#text-outline-${filterId})`;
 
   const resolvedGradient =
     gradientValue ??
@@ -153,19 +159,9 @@ export default function Typography<T extends React.ElementType = "p">({
         color: "transparent",
       }
     : {};
-
-  const strokeStyle: React.CSSProperties = isStroke
-    ? {
-        WebkitTextStroke: `1px ${strokeColor}`,
-        paintOrder: "stroke fill",
-        filter: `
-        drop-shadow(0 0 ${strokeValue} ${strokeColor})
-        drop-shadow(0 0 ${strokeValue} ${strokeColor})
-        drop-shadow(0 0 ${strokeValue} ${strokeColor})
-        drop-shadow(0 0 ${strokeValue} ${strokeColor})
-      `,
-      }
-    : {};
+  const shadowFilter = shadow
+    ? `drop-shadow(0 ${shadow === "sm" ? "3px" : shadow === "md" ? "6px" : "12px"} 4px ${shadowColor})`
+    : "";
 
   return (
     <>
@@ -173,7 +169,7 @@ export default function Typography<T extends React.ElementType = "p">({
       {isStroke && (
         <svg width="0" height="0" className="absolute">
           <defs>
-            <filter id="text-outline">
+            <filter id={filterIdStr}>
               <feMorphology
                 in="SourceAlpha"
                 result="expanded"
@@ -200,7 +196,11 @@ export default function Typography<T extends React.ElementType = "p">({
           {
             "--shadow-color": shadowColor,
             ...gradientStyle,
-            ...(isStroke ? { filter: "url(#text-outline)" } : {}),
+            ...(isStroke
+              ? { filter: `${filterUrl} ${shadowFilter}`.trim() }
+              : shadowFilter
+                ? { filter: shadowFilter }
+                : {}),
             ...((props as any).style || {}),
           } as React.CSSProperties
         }
@@ -212,7 +212,6 @@ export default function Typography<T extends React.ElementType = "p">({
           align && TextAlign[align],
           italic && "italic",
           truncate && "truncate",
-          shadow && FontShadowClassMap[shadow],
           className,
         )}
         {...props}
