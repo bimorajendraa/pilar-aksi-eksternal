@@ -31,6 +31,43 @@ export default function HeroSection() {
         aria-hidden
       />
 
+      <div className="absolute left-210 top-0 -translate-y-1/2 z-[7] w-619">
+        <NextImage
+          src="/images/Pattern.svg"
+          alt="dekorasi"
+          width={619}
+          height={606}
+          wrapperClassName="absolute"
+        />
+      </div>
+      <div className="absolute left-40 top-30 -translate-y-1/2 z-[7] w-619">
+        <NextImage
+          src="/images/Pattern.svg"
+          alt="dekorasi"
+          width={600}
+          height={593}
+          wrapperClassName="absolute"
+        />
+      </div>
+      <div className="absolute left-[-20] top-20 -translate-y-1/2 z-[6] w-397 opacity-60">
+        <NextImage
+          src="/images/Exclude.svg"
+          alt="dekorasi"
+          width={397}
+          height={392}
+          wrapperClassName="absolute"
+        />
+      </div>
+      <div className="absolute left-300 top-70 -translate-y-1/2 z-[6] w-397 opacity-60">
+        <NextImage
+          src="/images/Union.svg"
+          alt="dekorasi"
+          width={397}
+          height={392}
+          wrapperClassName="absolute"
+        />
+      </div>
+
       {/* ── Konten utama ── */}
       <TypographyContainer
         as="div"
@@ -50,6 +87,8 @@ export default function HeroSection() {
             isStroke
             strokeValue="8px"
             strokeColor="white"
+            shadow="md"
+            shadowColor="#002590"
             align="center"
             className="!text-[72px] md:!text-[96px] lg:!text-[112px] leading-none"
           >
@@ -66,6 +105,8 @@ export default function HeroSection() {
             isStroke
             strokeValue="8px"
             strokeColor="white"
+            shadow="md"
+            shadowColor="#002590"
             align="center"
             className="!text-[96px] md:!text-[130px] lg:!text-[150px] leading-none -mt-2 !font-black"
           >

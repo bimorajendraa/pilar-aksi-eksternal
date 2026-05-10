@@ -139,6 +139,7 @@ export default function NextImage({
       )}
 
       <Image
+        sizes={props.sizes ?? "100vw"}
         src={imgSrc}
         alt={alt}
         fill={hasRatio || fill ? true : undefined}
