@@ -76,6 +76,7 @@ type CardProps = {
   children: React.ReactNode;
   className?: string;
   as?: React.ElementType;
+  style?: React.CSSProperties;
 
   variant?: keyof typeof variantMap;
   borderColor?: keyof typeof borderColorMap;
@@ -94,6 +95,7 @@ export default function Card({
   children,
   className,
   as: Component = "div",
+  style,
   variant = "default",
   borderColor = "neutral",
   padding = "md",
@@ -103,6 +105,7 @@ export default function Card({
 }: CardProps) {
   return (
     <Component
+      style={style}
       onClick={onClick}
       className={cn(
         "overflow-hidden",

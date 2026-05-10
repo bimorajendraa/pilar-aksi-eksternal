@@ -291,3 +291,20 @@ body {
   line-height: 16px;
   font-weight: 400;
 }
+
+/* ════════════════════════════════════════
+   UTILITIES
+   ════════════════════════════════════════ */
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
