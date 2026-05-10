@@ -6,6 +6,7 @@ import KabinetSection from "@/components/sections/KabinetSection";
 import DepartemenSection from "@/components/sections/DepartemenSection";
 import TestimoniSection from "@/components/sections/TestimoniSection";
 import KalenderSection from "@/components/sections/KalenderSection";
+import Footer from "@/components/sections/Footer";
 
 export default function HomePage() {
   return (
@@ -17,6 +18,7 @@ export default function HomePage() {
       <DepartemenSection />
       <TestimoniSection />
       <KalenderSection />
+      <Footer />
     </main>
   );
 }
