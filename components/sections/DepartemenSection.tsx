@@ -46,6 +46,33 @@ export default function DepartemenSection() {
 
   return (
     <section className="relative w-full overflow-hidden bg-white py-16">
+      <div className="absolute left-0 top-0 -translate-y-1/2 z-0 w-1420 opacity-9">
+        <NextImage
+          src="/images/Dekor-1.svg"
+          alt="dekorasi"
+          width={1530.57}
+          height={1069.18}
+          wrapperClassName="absolute"
+        />
+      </div>
+      <div className="absolute left-[-320] top-[-30] -translate-y-1/2 z-0 w-830 opacity-62">
+        <NextImage
+          src="/images/Star-30.svg"
+          alt="dekorasi"
+          width={830.15}
+          height={830.15}
+          wrapperClassName="absolute"
+        />
+      </div>
+      <div className="absolute left-320 top-15 -translate-y-1/2 z-0 w-784 opacity-70 blur">
+        <NextImage
+          src="/images/Star-6.svg"
+          alt="dekorasi"
+          width={380.39}
+          height={380.39}
+          wrapperClassName="absolute"
+        />
+      </div>
       {/* ── Judul ── */}
       <TypographyContainer
         as="div"
@@ -102,7 +129,7 @@ export default function DepartemenSection() {
               hoverable
               padding="none"
               rounded="2xl"
-              className="flex-shrink-0 w-[calc(25%-12px)]"
+              className="flex-shrink-0 w-[322px] h-[430px]"
               style={{ scrollSnapAlign: "start" }}
             >
               {/* Foto departemen */}
