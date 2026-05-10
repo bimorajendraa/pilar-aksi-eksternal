@@ -16,7 +16,7 @@ export default function Navbar() {
       />
       <div className="max-w-7xl mx-auto px-6 md:px-8 h-16 flex items-center justify-between">
         {/* Logo */}
-        <div className="flex flex-col leading-tight">
+        <div className="flex flex-col leading-tight gap-0">
           <Typography
             variant="h6"
             font="merriweather"
@@ -32,6 +32,7 @@ export default function Navbar() {
             weight="bold"
             color="neutral-600"
             italic
+            className="-mt-2"
           >
             HMSI
           </Typography>
