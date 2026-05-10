@@ -6,6 +6,24 @@ import Card from "@/components/ui/Card";
 export default function KabinetSection() {
   return (
     <section className="relative w-full overflow-hidden bg-white">
+      <div className="absolute left-[-450] top-[-180] -translate-y-1/2 z-0 w-860 opacity-60">
+        <NextImage
+          src="/images/Pillar-3.svg"
+          alt="dekorasi"
+          width={860}
+          height={1491}
+          wrapperClassName="absolute"
+        />
+      </div>
+      <div className="absolute left-250 top-10 -translate-y-1/2 z-0 w-860 opacity-80 rotate-3">
+        <NextImage
+          src="/images/Pillar-3.svg"
+          alt="dekorasi"
+          width={860}
+          height={1491}
+          wrapperClassName="absolute"
+        />
+      </div>
       <TypographyContainer
         as="div"
         maxWidth="xl"
@@ -48,7 +66,7 @@ export default function KabinetSection() {
       </TypographyContainer>
 
       {/* ── Bagian Bawah: Card Visi & Misi ── */}
-      <div className="px-6 md:px-8 pb-8 -mt-8">
+      <div className="px-6 md:px-8 pb-8 -mt-8 relative z-10">
         <div className="mx-auto max-w-[90%] rounded-[56px] p-[6px] bg-gradient-to-br from-blue-dark-300 to-blue-light-300">
           <div className="bg-white rounded-[56px] p-8">
             <div className="flex flex-row gap-12">
