@@ -162,7 +162,7 @@ export default function DepartemenPage() {
         alt=""
         aria-hidden
         className="absolute top-0 left-0 w-full h-full object-cover z-0 pointer-events-none"
-        style={{ opacity: 0.5, mixBlendMode: "multiply" }}
+        style={{ mixBlendMode: "multiply" }}
       />
 
       <TypographyContainer as="div" maxWidth="xl" paddingX="md" paddingY="lg">
