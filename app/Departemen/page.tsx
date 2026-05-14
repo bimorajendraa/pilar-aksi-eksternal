@@ -177,16 +177,22 @@ export default function DepartemenPage() {
                 onClick={() => setActiveId(dept.id)}
                 className={`px-9 py-3 rounded-3xl w-full transition-all duration-200 ${
                   activeId === dept.id
-                    ? "bg-gradient-to-r from-blue-dark-300 to-blue-light-300"
-                    : "bg-white hover:bg-blue-dark-50"
+                    ? "bg-gradient-to-b from-blue-dark-300 to-blue-light-300"
+                    : "bg-white hover:bg-gradient-to-b hover:from-blue-dark-300 hover:to-blue-light-300"
                 }`}
               >
                 <Typography
+                  as="span"
                   variant="body-small"
                   font="body"
                   weight="bold"
                   italic
-                  color={activeId === dept.id ? "white" : "neutral-600"}
+                  color="default"
+                  className={`transition-colors duration-200 ${
+                    activeId === dept.id
+                      ? "!text-white"
+                      : "!text-neutral-600 group-hover:!text-white"
+                  }`}
                 >
                   {dept.nama}
                 </Typography>
