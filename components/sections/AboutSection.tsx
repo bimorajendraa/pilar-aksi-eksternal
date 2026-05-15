@@ -139,7 +139,7 @@ export default function AboutSection() {
           {/* ── Kolom Kanan: Logo ── */}
           <div className="flex items-center justify-center w-full md:flex-1">
             <NextImage
-              src="/images/logo-hmsi.png"
+              src="/images/logo-hmsi.webp"
               alt="Logo HMSI ITS"
               ratio="1/1"
               wrapperClassName="w-[200px] h-[200px] md:w-[383px] md:h-[383px]"

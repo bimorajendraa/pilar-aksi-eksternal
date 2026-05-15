@@ -335,3 +335,23 @@ body {
 .animate-marquee-right {
   animation: marquee-right 20s linear infinite;
 }
+
+.tagline-pill {
+  outline: 4px solid white;
+}
+
+@media (min-width: 768px) {
+  .tagline-pill {
+    outline: 7px solid white;
+  }
+}
+
+.stroke-responsive {
+  -webkit-text-stroke: 3px white;
+}
+
+@media (min-width: 768px) {
+  .stroke-responsive {
+    -webkit-text-stroke: 8px white;
+  }
+}

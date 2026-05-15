@@ -32,7 +32,7 @@ export default function KabinetSection() {
         className="relative z-10"
       >
         {/* ── Bagian Atas: Logo + Deskripsi ── */}
-        <div className="flex flex-row items-center gap-12 mb-12 mt-6">
+        <div className="flex flex-col md:flex-row items-center gap-12 mb-12 mt-6">
           {/* Kolom Kiri: Logo Kabinet Pilar Aksi */}
           <div className="flex items-center justify-center flex-1">
             <NextImage
@@ -40,13 +40,13 @@ export default function KabinetSection() {
               alt="Kabinet Pilar Aksi"
               width={408}
               height={123}
-              wrapperClassName="w-[408px] h-[123px]"
+              wrapperClassName="w-[270px] h-[130px] md:w-[408px] md:h-[123px]"
               showSkeleton={true}
             />
           </div>
 
           {/* Kolom Kanan: Deskripsi */}
-          <div className="flex-1">
+          <div className="flex-1 -mt-12 md:mt-0 px-4 md:px-0">
             <Typography
               variant="body-large"
               font="body"
@@ -66,12 +66,12 @@ export default function KabinetSection() {
       </TypographyContainer>
 
       {/* ── Bagian Bawah: Card Visi & Misi ── */}
-      <div className="px-6 md:px-8 pb-8 -mt-8 relative z-10">
-        <div className="mx-auto max-w-[90%] rounded-[56px] p-[6px] bg-gradient-to-br from-blue-dark-300 to-blue-light-300">
-          <div className="bg-white rounded-[56px] p-8">
-            <div className="flex flex-row gap-12">
+      <div className="px-2 md:px-6 lg:px-8 pb-8 -mt-13 md:-mt-8 relative z-10">
+        <div className="mx-auto max-w-[99%] md:max-w-[90%] rounded-[56px] p-[6px] bg-gradient-to-br from-blue-dark-300 to-blue-light-300">
+          <div className="bg-white rounded-[56px] p-4 md:p-8">
+            <div className="flex flex-col md:flex-row gap-6 md:gap-12">
               {/* Visi */}
-              <div className="flex flex-col gap-6 flex-[2] items-center">
+              <div className="flex flex-col gap-2 md:gap-6 md:flex-[2] items-center">
                 <Typography
                   variant="h3"
                   font="coolvetica"
@@ -91,7 +91,8 @@ export default function KabinetSection() {
                   variant="body-large"
                   font="body"
                   color="neutral-600"
-                  align="justify"
+                  align="center"
+                  className="md:text-left"
                 >
                   Mewujudkan HMSI Sebagai <strong>Katalisator</strong>{" "}
                   pergerakan yang <strong>Adaptif dan Beradampak</strong> dalam
@@ -101,7 +102,7 @@ export default function KabinetSection() {
               </div>
 
               {/* Misi */}
-              <div className="flex flex-col gap-6 flex-[3] items-center">
+              <div className="flex flex-col gap-2 md:gap-6 flex-[3] items-center">
                 <Typography
                   variant="h3"
                   font="coolvetica"
@@ -139,7 +140,7 @@ export default function KabinetSection() {
                         variant="body-large"
                         font="body"
                         color="neutral-600"
-                        align="justify"
+                        align="left"
                       >
                         {misi}
                       </Typography>

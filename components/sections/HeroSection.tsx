@@ -4,10 +4,23 @@ import Typography from "@/components/ui/Typography";
 import TypographyContainer from "@/components/ui/TypographyContainer";
 import NextImage from "@/components/ui/NextImage";
 import Image from "next/image";
+import { useEffect, useState } from "react";
+
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+  return isMobile;
+}
 
 export default function HeroSection() {
+  const isMobile = useIsMobile();
   return (
-    <section className="relative w-full min-h-screen overflow-hidden bg-white">
+    <section className="relative w-full h-screen overflow-hidden bg-white">
       {/* ── Background: foto bersama HMSI ── */}
       <NextImage
         src="/images/foto-bersama-hmsi-1.png"
@@ -75,7 +88,7 @@ export default function HeroSection() {
         paddingY="none"
         className="relative z-20 min-h-screen flex items-center justify-center"
       >
-        <div className="flex flex-col items-center gap-2">
+        <div className="flex flex-col items-center gap-2 px-6 md:px-0">
           {/* "Satu Pintu" */}
           <Typography
             variant="h1"
@@ -84,12 +97,12 @@ export default function HeroSection() {
             isGradient
             gradientPreset="blue-vertical"
             isStroke
-            strokeValue="8px"
+            strokeValue={isMobile ? "4px" : "8px"}
             strokeColor="white"
             shadow="md"
             shadowColor="#002590"
             align="center"
-            className="!text-[72px] md:!text-[96px] lg:!text-[112px] leading-none"
+            className="!text-[72px] md:!text-[96px] lg:!text-[112px] leading-none whitespace-nowrap"
           >
             Satu Pintu
           </Typography>
@@ -102,7 +115,7 @@ export default function HeroSection() {
             isGradient
             gradientPreset="blue-vertical"
             isStroke
-            strokeValue="8px"
+            strokeValue={isMobile ? "4px" : "8px"}
             strokeColor="white"
             shadow="md"
             shadowColor="#002590"
@@ -113,16 +126,14 @@ export default function HeroSection() {
           </Typography>
 
           {/* Tagline pill */}
-          <div
-            className="mt-6 px-17 md:px-30 lg:px-70 py-0 rounded-full bg-gradient-to-r from-blue-light-200 to-blue-dark-300"
-            style={{ outline: "7px solid white", outlineOffset: "0px" }}
-          >
+          <div className="tagline-pill mt-6 px-4 md:px-30 lg:px-70 py-0 rounded-full bg-gradient-to-r from-blue-light-200 to-blue-dark-300">
             <Typography
               variant="h6"
               font="coolvetica"
               italic
               color="white"
               align="center"
+              className="whitespace-nowrap"
             >
               #KuatkanPilar, Satukan Aksi Nyata
             </Typography>
