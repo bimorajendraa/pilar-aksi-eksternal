@@ -123,13 +123,17 @@ export default function AboutSection() {
               color="neutral-600"
               align="justify"
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
+              Himpunan Mahasiswa Sistem Informasi (HMSI) merupakan organisasi
+              kemahasiswaan yang menjadi wadah pengembangan diri mahasiswa
+              Sistem Informasi dalam aspek akademik, profesional, dan
+              kepemimpinan. Melalui berbagai kegiatan keilmuan, penerapan
+              teknologi, serta pengabdian kepada masyarakat yang selaras dengan
+              Tri Dharma Perguruan Tinggi, HMSI berperan dalam meningkatkan
+              kompetensi, membentuk karakter, dan menumbuhkan sikap profesional.
+              HMSI juga mendorong anggotanya untuk berintegritas, bertanggung
+              jawab, adaptif terhadap perkembangan teknologi, serta mampu
+              memberikan kontribusi nyata bagi lingkungan akademik dan
+              masyarakat.
             </Typography>
           </div>
 

@@ -1,6 +1,5 @@
 "use client";
 
-import * as React from "react";
 import Typography from "@/components/ui/Typography";
 import TypographyContainer from "@/components/ui/TypographyContainer";
 import NextImage from "@/components/ui/NextImage";
@@ -31,7 +30,7 @@ export default function HeroSection() {
         aria-hidden
       />
 
-      <div className="absolute left-210 top-0 -translate-y-1/2 z-[7] w-619">
+      <div className="hidden md:block absolute left-210 top-0 -translate-y-1/2 z-[7] w-619">
         <NextImage
           src="/images/Pattern.svg"
           alt="dekorasi"
@@ -40,7 +39,7 @@ export default function HeroSection() {
           wrapperClassName="absolute"
         />
       </div>
-      <div className="absolute left-40 top-30 -translate-y-1/2 z-[7] w-619">
+      <div className="hidden md:block absolute left-40 top-30 -translate-y-1/2 z-[7] w-619">
         <NextImage
           src="/images/Pattern.svg"
           alt="dekorasi"
@@ -49,7 +48,7 @@ export default function HeroSection() {
           wrapperClassName="absolute"
         />
       </div>
-      <div className="absolute left-[-20] top-20 -translate-y-1/2 z-[6] w-397 opacity-60">
+      <div className="hidden md:block absolute left-[-20] top-20 -translate-y-1/2 z-[6] w-397 opacity-60">
         <NextImage
           src="/images/Exclude.svg"
           alt="dekorasi"
@@ -58,7 +57,7 @@ export default function HeroSection() {
           wrapperClassName="absolute"
         />
       </div>
-      <div className="absolute left-300 top-70 -translate-y-1/2 z-[6] w-397 opacity-60">
+      <div className="hidden md:block absolute left-300 top-70 -translate-y-1/2 z-[6] w-397 opacity-60">
         <NextImage
           src="/images/Union.svg"
           alt="dekorasi"
@@ -115,7 +114,7 @@ export default function HeroSection() {
 
           {/* Tagline pill */}
           <div
-            className="mt-6 px-70 py-0 rounded-full bg-gradient-to-r from-blue-light-200 to-blue-dark-300"
+            className="mt-6 px-17 md:px-30 lg:px-70 py-0 rounded-full bg-gradient-to-r from-blue-light-200 to-blue-dark-300"
             style={{ outline: "7px solid white", outlineOffset: "0px" }}
           >
             <Typography
