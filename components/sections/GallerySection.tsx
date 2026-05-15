@@ -36,8 +36,8 @@ export default function GallerySection() {
         paddingY="lg"
         className="relative z-10"
       >
-        {/* ── Judul ── */}
-        <div className="flex flex-row items-baseline gap-0 mb-0">
+        {/* ── Judul Desktop ── */}
+        <div className="flex hidden md:block flex-row items-baseline gap-0 mb-0">
           {/* "G" - Merriweather */}
           <Typography
             as="span"
@@ -79,6 +79,63 @@ export default function GallerySection() {
           <Typography
             as="span"
             variant="h2"
+            font="merriweather"
+            italic
+            weight="bold"
+            isGradient
+            gradientPreset="blue-vertical"
+            isStroke
+            strokeValue="3"
+            strokeColor="white"
+            shadow="sm"
+            shadowColor="#00000040"
+          >
+            HMSI
+          </Typography>
+        </div>
+        {/* ── Judul Mobile ── */}
+        <div className="flex md:hidden flex-row items-center justify-center gap-0 mb-0">
+          {/* "G" - Merriweather */}
+          <Typography
+            as="span"
+            variant="h3"
+            font="merriweather"
+            italic
+            weight="bold"
+            isGradient
+            gradientPreset="blue-vertical"
+            isStroke
+            strokeValue="3"
+            strokeColor="white"
+            shadow="sm"
+            shadowColor="#00000040"
+          >
+            G
+          </Typography>
+
+          {/* "allery" - Coolvetica */}
+          <Typography
+            as="span"
+            variant="h3"
+            font="coolvetica"
+            italic
+            isGradient
+            gradientPreset="blue-vertical"
+            isStroke
+            strokeValue="3"
+            strokeColor="white"
+            shadow="sm"
+            shadowColor="#00000040"
+          >
+            allery
+          </Typography>
+
+          <span className="w-3" />
+
+          {/* "HMSI" - Merriweather */}
+          <Typography
+            as="span"
+            variant="h3"
             font="merriweather"
             italic
             weight="bold"
