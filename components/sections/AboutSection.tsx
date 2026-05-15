@@ -1,4 +1,3 @@
-// sections/AboutSection.tsx
 import Typography from "@/components/ui/Typography";
 import TypographyContainer from "@/components/ui/TypographyContainer";
 import NextImage from "@/components/ui/NextImage";
@@ -60,10 +59,10 @@ export default function AboutSection() {
         paddingY="xl"
         className="relative z-10"
       >
-        <div className="flex flex-row items-center gap-12">
+        <div className="flex flex-col-reverse md:flex-row items-center gap-8 md:gap-12">
           {/* ── Kolom Kiri: Teks ── */}
-          <div className="flex flex-col gap-6 flex-1">
-            <div className="flex flex-col gap-0">
+          <div className="flex flex-col gap-6 w-full md:flex-1 px-6 md:px-0">
+            <div className="flex flex-col gap-0 items-center md:items-start">
               <Typography
                 variant="h4"
                 font="merriweather"
@@ -81,7 +80,7 @@ export default function AboutSection() {
               </Typography>
 
               {/* HMSI ITS dalam satu baris dengan 2 font berbeda */}
-              <div className="flex flex-row items-baseline gap-2 -mt-5">
+              <div className="flex flex-row items-baseline gap-2 -mt-5 justify-center md:justify-start">
                 <Typography
                   as="span"
                   variant="h2"
@@ -138,13 +137,12 @@ export default function AboutSection() {
           </div>
 
           {/* ── Kolom Kanan: Logo ── */}
-          <div className="flex items-center justify-center flex-1">
+          <div className="flex items-center justify-center w-full md:flex-1">
             <NextImage
               src="/images/logo-hmsi.png"
               alt="Logo HMSI ITS"
               ratio="1/1"
-              rounded="xl"
-              wrapperClassName="w-[383px] h-[383px]"
+              wrapperClassName="w-[200px] h-[200px] md:w-[383px] md:h-[383px]"
               showSkeleton={true}
             />
           </div>
