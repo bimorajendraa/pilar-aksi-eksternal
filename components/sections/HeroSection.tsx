@@ -20,7 +20,7 @@ function useIsMobile() {
 export default function HeroSection() {
   const isMobile = useIsMobile();
   return (
-    <section className="relative w-full h-screen overflow-hidden bg-white">
+    <section className="relative w-full overflow-hidden bg-white">
       {/* ── Background: foto bersama HMSI ── */}
       <NextImage
         src="/images/foto-bersama-hmsi-1.png"

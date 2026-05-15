@@ -25,13 +25,23 @@ export default function DepartemenSection() {
   const scrollRef = React.useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = React.useState(0);
 
-  const totalDots = Math.ceil(departemen.length / 4);
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  React.useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+
+  const itemsPerPage = isMobile ? 2 : 4;
+  const totalDots = Math.ceil(departemen.length / itemsPerPage);
 
   const scrollTo = (index: number) => {
     if (!scrollRef.current) return;
-    const cardWidth = scrollRef.current.offsetWidth / 4;
+    const cardWidth = scrollRef.current.offsetWidth / itemsPerPage;
     scrollRef.current.scrollTo({
-      left: index * cardWidth * 4,
+      left: index * cardWidth * itemsPerPage,
       behavior: "smooth",
     });
     setActiveIndex(index);
@@ -40,8 +50,8 @@ export default function DepartemenSection() {
   const handleScroll = () => {
     if (!scrollRef.current) return;
     const scrollLeft = scrollRef.current.scrollLeft;
-    const cardWidth = scrollRef.current.offsetWidth / 4;
-    setActiveIndex(Math.round(scrollLeft / (cardWidth * 4)));
+    const cardWidth = scrollRef.current.offsetWidth / itemsPerPage;
+    setActiveIndex(Math.round(scrollLeft / (cardWidth * itemsPerPage)));
   };
 
   return (
@@ -94,8 +104,13 @@ export default function DepartemenSection() {
           shadow="sm"
           shadowColor="#00000040"
           align="center"
+          className="!text-[32px] md:!text-[64px]"
         >
-          10 Departemen HMSI
+          <span className="md:hidden">
+            <span className="block">10 Departemen</span>
+            <span className="block -mt-10">HMSI</span>
+          </span>
+          <span className="hidden md:inline">10 Departemen HMSI</span>
         </Typography>
       </TypographyContainer>
 
@@ -104,7 +119,7 @@ export default function DepartemenSection() {
         {/* Tombol Prev */}
         <button
           onClick={() => scrollTo(Math.max(0, activeIndex - 1))}
-          className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-md hover:shadow-lg transition-all"
+          className="hidden md:block absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-md hover:shadow-lg transition-all"
         >
           <ChevronLeft className="w-6 h-6 text-blue-dark-300" />
         </button>
@@ -129,7 +144,7 @@ export default function DepartemenSection() {
               hoverable
               padding="none"
               rounded="2xl"
-              className="flex-shrink-0 w-[322px] h-[430px]"
+              className="flex-shrink-0 w-[calc(70vw-24px)] md:w-[322px] h-[calc(93vw-32px)] md:h-[430px] relative"
               style={{ scrollSnapAlign: "start" }}
             >
               {/* Foto departemen */}
@@ -153,7 +168,7 @@ export default function DepartemenSection() {
                         width={1}
                         height={1}
                         wrapperClassName="flex-shrink-0"
-                        imageClassName="!w-auto !h-auto"
+                        imageClassName="!w-auto !h-auto !max-h-12 md:!max-h-14"
                         showSkeleton={false}
                       />
                     </div>
@@ -177,7 +192,7 @@ export default function DepartemenSection() {
         {/* Tombol Next */}
         <button
           onClick={() => scrollTo(Math.min(totalDots - 1, activeIndex + 1))}
-          className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-md hover:shadow-lg transition-all"
+          className="hidden md:block absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-md hover:shadow-lg transition-all"
         >
           <ChevronRight className="w-6 h-6 text-blue-dark-300" />
         </button>
@@ -185,6 +200,12 @@ export default function DepartemenSection() {
 
       {/* ── Dots indicator ── */}
       <div className="flex flex-row items-center justify-center gap-2 mt-8">
+        <button
+          onClick={() => scrollTo(Math.max(0, activeIndex - 1))}
+          className="block md:hidden bg-blue-dark-300 rounded-full p-2"
+        >
+          <ChevronLeft className="w-4 h-4 text-white" />
+        </button>
         {Array.from({ length: totalDots }).map((_, index) => (
           <button
             key={index}
@@ -196,6 +217,12 @@ export default function DepartemenSection() {
             }`}
           />
         ))}
+        <button
+          onClick={() => scrollTo(Math.min(totalDots - 1, activeIndex + 1))}
+          className="block md:hidden bg-blue-dark-300 rounded-full p-2"
+        >
+          <ChevronRight className="w-4 h-4 text-white" />
+        </button>
       </div>
     </section>
   );
