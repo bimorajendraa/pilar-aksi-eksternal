@@ -121,6 +121,11 @@ export default function NextImage({
   const [isLoading, setIsLoading] = React.useState(true);
   const [imgSrc, setImgSrc] = React.useState(src);
 
+  React.useEffect(() => {
+    setImgSrc(src);
+    setIsLoading(true);
+  }, [src]);
+
   const hasRatio = ratio !== "auto";
 
   return (

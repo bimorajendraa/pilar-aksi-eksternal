@@ -7,18 +7,23 @@ import NextImage from "@/components/ui/NextImage";
 import Button from "@/components/ui/Button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Card from "../ui/Card";
+import Link from "next/link";
 
 const departemen = [
-  { id: 1, nama: "Executive Board" },
-  { id: 2, nama: "External Affairs" },
-  { id: 3, nama: "Human Resource Development" },
-  { id: 4, nama: "Entrepreneurship" },
-  { id: 5, nama: "Internal Affairs" },
-  { id: 6, nama: "Information Media" },
-  { id: 7, nama: "Research & Technology Application" },
-  { id: 8, nama: "Student Welfare" },
-  { id: 9, nama: "Social Development" },
-  { id: 10, nama: "Manage" },
+  { id: 1, nama: "Executive Board", href: "/Departemen?id=1" },
+  { id: 2, nama: "External Affairs", href: "/Departemen?id=3" },
+  { id: 3, nama: "Human Resource Development", href: "/Departemen?id=2" },
+  { id: 4, nama: "Entrepreneurship", href: "/Departemen?id=4" },
+  { id: 5, nama: "Internal Affairs", href: "/Departemen?id=5" },
+  { id: 6, nama: "Information Media", href: "/Departemen?id=6" },
+  {
+    id: 7,
+    nama: "Research & Technology Application",
+    href: "/Departemen?id=7",
+  },
+  { id: 8, nama: "Student Welfare", href: "/Departemen?id=8" },
+  { id: 9, nama: "Social Development", href: "/Departemen?id=9" },
+  { id: 10, nama: "Manage", href: "/Departemen?id=10" },
 ];
 
 export default function DepartemenSection() {
@@ -174,14 +179,19 @@ export default function DepartemenSection() {
                     </div>
 
                     {/* Tombol */}
-                    <Button
-                      variant="primary"
-                      size="sm"
-                      rounded="full"
-                      rightIcon={<span>→</span>}
+                    <Link
+                      href={dept.href}
+                      className="w-full flex justify-center"
                     >
-                      Lihat lebih lanjut
-                    </Button>
+                      <Button
+                        variant="primary"
+                        size="sm"
+                        rounded="full"
+                        rightIcon={<span>→</span>}
+                      >
+                        Lihat lebih lanjut
+                      </Button>
+                    </Link>
                   </div>
                 </NextImage>
               </Card.Header>
