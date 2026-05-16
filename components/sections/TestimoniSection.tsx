@@ -12,10 +12,10 @@ const testimoni = [
   },
   {
     id: 2,
-    isi: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    nama: "Nama Orang",
-    angkatan: "Nama Angkatan",
-    jabatan: "Jabatan HMSI",
+    isi: "Bergabung dengan HMSI adalah salah satu keputusan terbaik dalam hidup saya karena di sana saya tidak hanya melatih soft skill, tetapi juga mengasah cognitive skill yang sangat krusial. Cognitive skill ini adalah ilmu mahal yang membedakan cara kerja level staf operasional dengan level strategis, di mana kemampuannya tidak bisa sekadar dipelajari lewat teori melainkan butuh jam terbang nyata.\nHMSI menjadi playground bagi saya untuk implemengasi cognitive skill yang saya pelajari di buku-buku, sebelum benar-benar terjun ke dunia profesional yang penuh tekanan.",
+    nama: "Hatta Bagus Himawan",
+    angkatan: "Anonims",
+    jabatan: "2006",
   },
 ];
 
@@ -33,20 +33,25 @@ export default function TestimoniSection() {
           {testimoni.map((item) => (
             <div key={item.id} className="flex flex-col gap-6">
               {/* Isi testimoni */}
-              <Typography
-                variant="body-large"
-                font="body"
-                color="neutral-600"
-                align="justify"
-              >
-                {item.isi}
-              </Typography>
+              <div className="flex flex-col gap-0">
+                {item.isi.split("\n").map((paragraf, index) => (
+                  <Typography
+                    key={index}
+                    variant="body-large"
+                    font="body"
+                    color="neutral-600"
+                    align="justify"
+                  >
+                    {paragraf}
+                  </Typography>
+                ))}
+              </div>
 
               {/* Avatar + Identitas */}
               <div className="flex flex-row items-center gap-4">
                 {/* Foto avatar */}
                 <NextImage
-                  src={`/images/testimoni-${item.id}.jpg`}
+                  src={`/images/testimoni-${item.id}.webp`}
                   alt={item.nama}
                   ratio="1/1"
                   rounded="full"
