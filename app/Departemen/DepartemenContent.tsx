@@ -181,7 +181,7 @@ export default function DepartemenContent() {
     <TypographyContainer as="div" maxWidth="xl" paddingX="md" paddingY="lg">
       {/* ── Judul ── */}
       <div className="flex flex-col items-center gap-0 mb-12">
-        <div className="relative inline-block">
+        <div className="relative inline-block mt-6 mx:mt-0">
           <Typography
             variant="h2"
             font="merriweather"
