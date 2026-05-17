@@ -44,39 +44,43 @@ export default function HeroSection() {
       />
 
       <div className="hidden md:block absolute left-210 top-0 -translate-y-1/2 z-[7] w-619">
-        <NextImage
+        <img
           src="/images/Pattern.svg"
-          alt="dekorasi"
+          alt=""
+          aria-hidden
+          className="absolute"
           width={619}
           height={606}
-          wrapperClassName="absolute"
         />
       </div>
       <div className="hidden md:block absolute left-40 top-30 -translate-y-1/2 z-[7] w-619">
-        <NextImage
+        <img
           src="/images/Pattern.svg"
-          alt="dekorasi"
+          alt=""
+          aria-hidden
+          className="absolute"
           width={600}
           height={593}
-          wrapperClassName="absolute"
         />
       </div>
       <div className="hidden md:block absolute left-[-20] top-20 -translate-y-1/2 z-[6] w-397 opacity-60">
-        <NextImage
+        <img
           src="/images/Exclude.svg"
-          alt="dekorasi"
+          alt=""
+          aria-hidden
+          className="absolute"
           width={397}
           height={392}
-          wrapperClassName="absolute"
         />
       </div>
       <div className="hidden md:block absolute left-300 top-70 -translate-y-1/2 z-[6] w-397 opacity-60">
-        <NextImage
+        <img
           src="/images/Union.svg"
-          alt="dekorasi"
+          alt=""
+          aria-hidden
+          className="absolute"
           width={397}
           height={392}
-          wrapperClassName="absolute"
         />
       </div>
 
