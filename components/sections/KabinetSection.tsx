@@ -52,6 +52,7 @@ export default function KabinetSection() {
               font="body"
               color="neutral-600"
               align="justify"
+              className="!text-[14px] md:!text-[18px]"
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -92,7 +93,7 @@ export default function KabinetSection() {
                   font="body"
                   color="neutral-600"
                   align="center"
-                  className="md:text-left"
+                  className="md:text-left !text-[14px] md:!text-[18px]"
                 >
                   Mewujudkan HMSI Sebagai <strong>Katalisator</strong>{" "}
                   pergerakan yang <strong>Adaptif dan Beradampak</strong> dalam
@@ -131,7 +132,7 @@ export default function KabinetSection() {
                         variant="body-large"
                         font="body"
                         color="neutral-600"
-                        className="flex-shrink-0"
+                        className="flex-shrink-0 !text-[14px] md:!text-[18px]"
                       >
                         {index + 1}.
                       </Typography>
@@ -141,6 +142,7 @@ export default function KabinetSection() {
                         font="body"
                         color="neutral-600"
                         align="left"
+                        className="!text-[14px] md:!text-[18px]"
                       >
                         {misi}
                       </Typography>

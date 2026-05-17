@@ -5,9 +5,9 @@ import Typography from "@/components/ui/Typography";
 import Link from "next/link";
 
 const navLinks = [
-  { label: "Departemen", href: "/departemen" },
-  { label: "Artikel", href: "/article" },
-  { label: "Info Center", href: "/info-center" },
+  { label: "Departemen", href: "/Departemen" },
+  { label: "Artikel", href: "/Article" },
+  { label: "Info Center", href: "/InfoCenter" },
 ];
 
 export default function Navbar() {

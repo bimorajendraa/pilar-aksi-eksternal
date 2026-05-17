@@ -121,6 +121,7 @@ export default function AboutSection() {
               font="body"
               color="neutral-600"
               align="justify"
+              className="!text-[14px] md:!text-[18px]"
             >
               Himpunan Mahasiswa Sistem Informasi (HMSI) merupakan organisasi
               kemahasiswaan yang menjadi wadah pengembangan diri mahasiswa
