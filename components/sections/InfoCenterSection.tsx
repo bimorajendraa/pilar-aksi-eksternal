@@ -192,7 +192,11 @@ export default function InfoCenterSection() {
                   </Typography>
 
                   {/* Deskripsi */}
-                  <Typography variant="body-small" font="body" color="muted">
+                  <Typography
+                    variant="body-small"
+                    font="body"
+                    color="neutral-text"
+                  >
                     {item.deskripsi}
                   </Typography>
 

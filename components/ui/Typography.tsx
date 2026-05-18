@@ -36,6 +36,7 @@ export const TextColor = {
   default: "text-foreground",
   white: "text-white",
   muted: "text-neutral-400",
+  "neutral-text": "text-neutral-text",
   "neutral-600": "text-neutral-600",
   "blue-dark-300": "text-blue-dark-300",
   "blue-light-300": "text-blue-light-300",
