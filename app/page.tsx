@@ -8,6 +8,7 @@ import TestimoniSection from "@/components/sections/TestimoniSection";
 import KalenderSection from "@/components/sections/KalenderSection";
 import GallerySection from "@/components/sections/GallerySection";
 import Footer from "@/components/sections/Footer";
+import InfoCenterSection from "@/components/sections/InfoCenterSection";
 
 export default function HomePage() {
   return (
@@ -19,6 +20,7 @@ export default function HomePage() {
       <DepartemenSection />
       <TestimoniSection />
       <KalenderSection />
+      <InfoCenterSection />
       <GallerySection />
       <Footer />
     </main>
