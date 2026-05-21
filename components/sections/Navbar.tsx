@@ -18,7 +18,12 @@ export default function Navbar() {
       {/* ── Bar utama ── */}
       <div className="max-w-7xl mx-auto px-6 md:px-8 h-16 flex items-center justify-between w-full">
         {/* Logo */}
-        <div className="flex flex-col leading-tight gap-0">
+        <Link
+          href="/"
+          aria-label="Kembali ke homepage"
+          className="flex flex-col leading-tight gap-0"
+          onClick={() => setIsOpen(false)}
+        >
           <Typography
             variant="h6"
             font="merriweather"
@@ -40,7 +45,7 @@ export default function Navbar() {
           >
             HMSI
           </Typography>
-        </div>
+        </Link>
 
         {/* Desktop Nav Links */}
         <div className="hidden md:flex items-center gap-6">

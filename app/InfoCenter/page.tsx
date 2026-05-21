@@ -6,7 +6,7 @@ export default function InfoCenterPage() {
   return (
     <main>
       <Navbar />
-      <InfoCenterSection />
+      <InfoCenterSection variant="page" />
       <Footer />
     </main>
   );

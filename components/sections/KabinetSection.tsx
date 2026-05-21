@@ -54,13 +54,16 @@ export default function KabinetSection() {
               align="justify"
               className="!text-[14px] md:!text-[18px]"
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
+              Bagi kami, sebuah pergerakan didefinisikan oleh stabilitas yang
+              dinamis, di mana Kabinet Pilar Aksi hadir sebagai wadah pemersatu
+              berbagai potensi untuk mengakselerasi perubahan di Sistem
+              Informasi. Kami berdiri untuk melindungi aspirasi melalui
+              lingkungan organisasi yang sehat, adaptif terhadap perkembangan
+              zaman, dan tetap mengedepankan efektivitas guna memastikan HMSI
+              menjadi tempat di mana setiap orang merasa memiliki dan setiap
+              program kerjanya membawa dampak berkelanjutan. Mari kenali kami
+              lebih dekat dan jadilah bagian dari pilar yang menginspirasi
+              aksi!{" "}
             </Typography>
           </div>
         </div>

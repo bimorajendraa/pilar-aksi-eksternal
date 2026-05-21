@@ -5,8 +5,8 @@ import Typography from "@/components/ui/Typography";
 import TypographyContainer from "@/components/ui/TypographyContainer";
 import NextImage from "@/components/ui/NextImage";
 
-const galleryTop = Array.from({ length: 10 }, (_, i) => i + 1);
-const galleryBottom = Array.from({ length: 10 }, (_, i) => i + 1);
+const galleryTop = Array.from({ length: 7 }, (_, i) => i + 1);
+const galleryBottom = Array.from({ length: 6 }, (_, i) => i + 8);
 
 export default function GallerySection() {
   return (
@@ -37,7 +37,7 @@ export default function GallerySection() {
         className="relative z-10"
       >
         {/* ── Judul Desktop ── */}
-        <div className="flex hidden md:block flex-row items-baseline gap-0 mb-0">
+        <div className="hidden md:flex flex-row items-baseline gap-0 mb-10">
           {/* "G" - Merriweather */}
           <Typography
             as="span"
@@ -73,7 +73,7 @@ export default function GallerySection() {
             allery
           </Typography>
 
-          <span className="w-3" />
+          <span className="w-6" />
 
           {/* "HMSI" - Merriweather */}
           <Typography
@@ -94,7 +94,7 @@ export default function GallerySection() {
           </Typography>
         </div>
         {/* ── Judul Mobile ── */}
-        <div className="flex md:hidden flex-row items-center justify-center gap-0 mb-0">
+        <div className="flex md:hidden flex-row items-center justify-center gap-0 mb-8">
           {/* "G" - Merriweather */}
           <Typography
             as="span"
@@ -130,7 +130,7 @@ export default function GallerySection() {
             allery
           </Typography>
 
-          <span className="w-3" />
+          <span className="w-4" />
 
           {/* "HMSI" - Merriweather */}
           <Typography
@@ -153,7 +153,7 @@ export default function GallerySection() {
       </TypographyContainer>
 
       {/* ── Row Atas: scroll ke kiri (marquee) ── */}
-      <div className="relative w-full overflow-hidden mb-4 -mt-6">
+      <div className="relative w-full overflow-hidden mb-4">
         <div className="flex flex-row gap-4 animate-marquee-left">
           {/* Duplikat 2x untuk infinite loop */}
           {[...galleryTop, ...galleryTop].map((item, index) => (
@@ -162,7 +162,7 @@ export default function GallerySection() {
               className="flex-shrink-0 w-[363px] h-[185px] rounded-2xl overflow-hidden"
             >
               <NextImage
-                src={`/images/gallery-${item}.jpg`}
+                src={`/images/gallery-${item}.webp`}
                 alt={`Gallery ${item}`}
                 ratio="auto"
                 width={363}
@@ -179,13 +179,13 @@ export default function GallerySection() {
       {/* ── Row Bawah: scroll ke kanan (marquee reverse) ── */}
       <div className="relative w-full overflow-hidden mb-16">
         <div className="flex flex-row gap-4 animate-marquee-right">
-          {[...galleryTop, ...galleryTop].map((item, index) => (
+          {[...galleryBottom, ...galleryBottom].map((item, index) => (
             <div
               key={index}
               className="flex-shrink-0 w-[363px] h-[185px] rounded-2xl overflow-hidden"
             >
               <NextImage
-                src={`/images/gallery-${item}.jpg`}
+                src={`/images/gallery-${item}.webp`}
                 alt={`Gallery ${item}`}
                 ratio="auto"
                 width={363}

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Typography from "@/components/ui/Typography";
 import TypographyContainer from "@/components/ui/TypographyContainer";
 
@@ -36,7 +37,24 @@ const socialMedia = [
 export default function Footer() {
   return (
     <footer className="relative w-full overflow-hidden bg-blue-dark-500">
-      <TypographyContainer as="div" maxWidth="xl" paddingX="md" paddingY="lg">
+      <div className="pointer-events-none absolute inset-y-0 right-0 z-0 h-full w-screen ">
+        <Image
+          src="/images/footer-texture.png"
+          alt=""
+          aria-hidden
+          fill
+          sizes="100vw"
+          className="object-contain object-right-bottom"
+        />
+      </div>
+
+      <TypographyContainer
+        as="div"
+        maxWidth="xl"
+        paddingX="md"
+        paddingY="lg"
+        className="relative z-10"
+      >
         {/* ── DESKTOP: Nav Links + Social Media ── */}
         <div className="hidden md:flex flex-row justify-between mb-16">
           {/* Nav Links */}
