@@ -1,7 +1,6 @@
 import Typography from "@/components/ui/Typography";
 import TypographyContainer from "@/components/ui/TypographyContainer";
 import NextImage from "@/components/ui/NextImage";
-import Card from "@/components/ui/Card";
 
 export default function KabinetSection() {
   return (

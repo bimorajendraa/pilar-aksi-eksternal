@@ -127,6 +127,9 @@ export default function NextImage({
   }, [src]);
 
   const hasRatio = ratio !== "auto";
+  const isSvg =
+    typeof imgSrc === "string" && imgSrc.toLowerCase().endsWith(".svg");
+  const isVisibleLoading = !isSvg && isLoading;
 
   return (
     <div
@@ -139,7 +142,7 @@ export default function NextImage({
       )}
     >
       {/* Skeleton loader */}
-      {showSkeleton && isLoading && (
+      {showSkeleton && isVisibleLoading && (
         <div className="absolute inset-0 animate-pulse bg-neutral-200" />
       )}
 
@@ -152,7 +155,7 @@ export default function NextImage({
         height={!hasRatio && !fill ? height : undefined}
         className={cn(
           "object-cover transition-opacity duration-300",
-          isLoading ? "opacity-0" : "opacity-100",
+          isVisibleLoading ? "opacity-0" : "opacity-100",
           imageClassName,
         )}
         onLoad={() => setIsLoading(false)}
@@ -161,6 +164,7 @@ export default function NextImage({
           setIsLoading(false);
         }}
         {...props}
+        unoptimized={isSvg || props.unoptimized}
       />
 
       {/* Children (overlay content) */}
