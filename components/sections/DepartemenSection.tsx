@@ -13,17 +13,17 @@ const departemen = [
   { id: 1, nama: "Executive Board", href: "/Departemen?id=1" },
   { id: 2, nama: "External Affairs", href: "/Departemen?id=3" },
   { id: 3, nama: "Human Resource Development", href: "/Departemen?id=2" },
-  { id: 4, nama: "Entrepreneurship", href: "/Departemen?id=4" },
-  { id: 5, nama: "Internal Affairs", href: "/Departemen?id=5" },
-  { id: 6, nama: "Information Media", href: "/Departemen?id=6" },
+  { id: 4, nama: "Entrepreneurship", href: "/Departemen?id=10" },
+  { id: 5, nama: "Internal Affairs", href: "/Departemen?id=4" },
+  { id: 6, nama: "Information Media", href: "/Departemen?id=5" },
   {
     id: 7,
     nama: "Research & Technology Application",
     href: "/Departemen?id=7",
   },
-  { id: 8, nama: "Student Welfare", href: "/Departemen?id=8" },
-  { id: 9, nama: "Social Development", href: "/Departemen?id=9" },
-  { id: 10, nama: "Manage", href: "/Departemen?id=10" },
+  { id: 8, nama: "Student Welfare", href: "/Departemen?id=9" },
+  { id: 9, nama: "Social Development", href: "/Departemen?id=6" },
+  { id: 10, nama: "Manage", href: "/Departemen?id=8" },
 ];
 
 export default function DepartemenSection() {
