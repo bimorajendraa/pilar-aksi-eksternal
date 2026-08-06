@@ -17,6 +17,16 @@ export default async function ArtikelDetailPage({
   return (
     <main className="bg-white min-h-screen">
       <Navbar />
+      <div
+        aria-hidden
+        className="absolute inset-0 z-0 pointer-events-none"
+        style={{
+          backgroundImage: "url('/images/bg-kotak.webp')",
+          backgroundRepeat: "repeat",
+          backgroundSize: "auto",
+          mixBlendMode: "multiply",
+        }}
+      />
       <TypographyContainer as="div" maxWidth="lg" paddingX="sm" paddingY="md">
         {/* Tombol back */}
         <Link

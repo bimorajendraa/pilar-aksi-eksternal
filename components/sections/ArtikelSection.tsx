@@ -141,7 +141,7 @@ export default function ArtikelSection() {
 
         {/* Tombol Lihat Selengkapnya */}
         <div className="flex justify-end mt-6">
-          <Link href="/artikel">
+          <Link href="/Article">
             <Button
               variant="outline"
               size="md"
