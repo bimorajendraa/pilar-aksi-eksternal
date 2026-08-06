@@ -89,8 +89,18 @@ export default function ArticlePage() {
   );
 
   return (
-    <main className="bg-white min-h-screen">
+    <main className="relative bg-white min-h-screen">
       <Navbar />
+      <div
+        aria-hidden
+        className="absolute inset-0 z-0 pointer-events-none"
+        style={{
+          backgroundImage: "url('/images/bg-kotak.webp')",
+          backgroundRepeat: "repeat",
+          backgroundSize: "auto",
+          mixBlendMode: "multiply",
+        }}
+      />
       <TypographyContainer
         as="div"
         maxWidth="xl"
