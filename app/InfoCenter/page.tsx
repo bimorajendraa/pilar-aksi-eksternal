@@ -4,7 +4,7 @@ import Footer from "@/components/sections/Footer";
 
 export default function InfoCenterPage() {
   return (
-    <main>
+    <main className="relative min-h-screen bg-white">
       <Navbar />
       <InfoCenterSection variant="page" />
       <Footer />

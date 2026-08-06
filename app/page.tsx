@@ -9,6 +9,7 @@ import KalenderSection from "@/components/sections/KalenderSection";
 import GallerySection from "@/components/sections/GallerySection";
 import Footer from "@/components/sections/Footer";
 import InfoCenterSection from "@/components/sections/InfoCenterSection";
+import ArtikelSection from "@/components/sections/ArtikelSection";
 
 export default function HomePage() {
   return (
@@ -20,6 +21,7 @@ export default function HomePage() {
       <DepartemenSection />
       <TestimoniSection />
       <KalenderSection />
+      <ArtikelSection />
       <InfoCenterSection />
       <GallerySection />
       <Footer />
