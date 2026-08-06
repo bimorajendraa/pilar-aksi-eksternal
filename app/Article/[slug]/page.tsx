@@ -4,39 +4,43 @@ import Typography from "@/components/ui/Typography";
 import TypographyContainer from "@/components/ui/TypographyContainer";
 import NextImage from "@/components/ui/NextImage";
 import { getArtikelBySlug } from "@/lib/api/artikel";
+import Navbar from "@/components/sections/Navbar";
+import Footer from "@/components/sections/Footer";
 
 export default async function ArtikelDetailPage({
   params,
 }: {
   params: { slug: string };
 }) {
-  const artikel = await getArtikelBySlug(params.slug);
+  const { slug } = await params;
+  const artikel = await getArtikelBySlug(slug);
 
   return (
     <main className="bg-white min-h-screen">
-      <TypographyContainer as="div" maxWidth="lg" paddingX="md" paddingY="xl">
+      <Navbar />
+      <TypographyContainer as="div" maxWidth="lg" paddingX="sm" paddingY="md">
         {/* Tombol back */}
         <Link
           href="/artikel"
-          className="inline-flex items-center gap-2 text-neutral-500 hover:text-blue-dark-300 transition-colors mb-8"
+          className="inline-flex items-center gap-2 mt-8 mb-4"
         >
-          <ArrowLeft className="w-4 h-4" />
-          <Typography variant="body-small" font="body">
-            Kembali
-          </Typography>
+          <NextImage
+            src="/images/arrow-right.svg"
+            alt="Kembali"
+            width={32}
+            height={32}
+            showSkeleton={false}
+            imageClassName="transition-all group-hover:opacity-50 rotate-180 brightness-0"
+          />
         </Link>
 
         {/* Judul artikel */}
         <Typography
           variant="h3"
-          font="merriweather"
+          font="coolvetica"
+          weight="regular"
+          color="neutral-600"
           italic
-          weight="bold"
-          isGradient
-          gradientPreset="blue-vertical"
-          isStroke
-          strokeValue="2"
-          strokeColor="white"
           align="center"
           className="mb-4"
         >
@@ -44,17 +48,17 @@ export default async function ArtikelDetailPage({
         </Typography>
 
         {/* Meta: tanggal + penulis + editor */}
-        <div className="flex flex-col items-center gap-1 mb-8">
-          <Typography variant="caption" font="body" color="muted">
+        <div className="flex flex-col items-start gap-1 mb-8">
+          <Typography variant="body-large" font="body" color="neutral-text">
             {artikel.published_at.label}
           </Typography>
           <div className="flex items-center gap-4">
-            <Typography variant="caption" font="body" color="muted">
-              Penulis: {artikel.author.name}
+            <Typography variant="body-large" font="body" color="neutral-text">
+              <span className="font-bold">Penulis:</span> {artikel.author.name}
             </Typography>
             {artikel.editor && (
-              <Typography variant="caption" font="body" color="muted">
-                Editor: {artikel.editor.name}
+              <Typography variant="body-large" font="body" color="neutral-text">
+                <span className="font-bold">Editor:</span> {artikel.editor.name}
               </Typography>
             )}
           </div>
@@ -78,6 +82,7 @@ export default async function ArtikelDetailPage({
           dangerouslySetInnerHTML={{ __html: artikel.content }}
         />
       </TypographyContainer>
+      <Footer />
     </main>
   );
 }
