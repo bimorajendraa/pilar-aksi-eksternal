@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
 import Typography from "@/components/ui/Typography";
 import TypographyContainer from "@/components/ui/TypographyContainer";
 import NextImage from "@/components/ui/NextImage";
@@ -21,7 +20,7 @@ export default async function ArtikelDetailPage({
       <TypographyContainer as="div" maxWidth="lg" paddingX="sm" paddingY="md">
         {/* Tombol back */}
         <Link
-          href="/artikel"
+          href="/Article"
           className="inline-flex items-center gap-2 mt-8 mb-4"
         >
           <NextImage
@@ -42,7 +41,7 @@ export default async function ArtikelDetailPage({
           color="neutral-600"
           italic
           align="center"
-          className="mb-4"
+          className="mb-4 !text-[24px] md:!text-[48px] leading-tight"
         >
           {artikel.title}
         </Typography>
@@ -52,7 +51,7 @@ export default async function ArtikelDetailPage({
           <Typography variant="body-large" font="body" color="neutral-text">
             {artikel.published_at.label}
           </Typography>
-          <div className="flex items-center gap-4">
+          <div className="flex flex-col md:flex-row items-start gap-1 md:gap-4">
             <Typography variant="body-large" font="body" color="neutral-text">
               <span className="font-bold">Penulis:</span> {artikel.author.name}
             </Typography>
