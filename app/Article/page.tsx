@@ -117,11 +117,22 @@ export default async function ArtikelPage({ searchParams }: ArtikelPageProps) {
         </div>
 
         {/* ── Grid Artikel ── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
-          {articles.map((artikel) => (
-            <ArtikelCard key={artikel.slug} artikel={artikel} size="lg" />
-          ))}
-        </div>
+        {articles.length === 0 ? (
+          <Typography
+            variant="body-large"
+            font="body"
+            color="neutral-text"
+            className="text-center py-16"
+          >
+            Belum ada artikel yang dipublikasikan.
+          </Typography>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
+            {articles.map((artikel) => (
+              <ArtikelCard key={artikel.slug} artikel={artikel} size="lg" />
+            ))}
+          </div>
+        )}
 
         {/* ── Pagination ── */}
         <ArtikelPagination

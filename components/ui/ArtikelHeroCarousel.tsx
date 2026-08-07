@@ -15,6 +15,10 @@ export default function ArtikelHeroCarousel({
   const [activeIndex, setActiveIndex] = React.useState(0);
   const current = artikels[activeIndex];
 
+  if (!current) {
+    return null;
+  }
+
   const prev = () =>
     setActiveIndex((i) => (i === 0 ? artikels.length - 1 : i - 1));
   const next = () =>
@@ -24,7 +28,7 @@ export default function ArtikelHeroCarousel({
     <div className="relative w-full rounded-4xl overflow-hidden h-[280px] md:h-[520px]">
       {/* Background image */}
       <NextImage
-        src={current.cover_image.url}
+        src={current.cover_image.url || "/images/placeholder.webp"}
         alt={current.cover_image.alt}
         fill
         wrapperClassName="absolute inset-0"
