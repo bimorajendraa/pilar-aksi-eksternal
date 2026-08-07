@@ -19,7 +19,7 @@ export default function ArtikelCard({
       <div
         className={`relative overflow-hidden rounded-lg ${
           featured
-            ? "h-[460px] md:h-full"
+            ? "h-[230px] md:h-full"
             : size === "lg"
               ? "h-[340px] md:h-[460px]"
               : size === "md"

@@ -4,6 +4,7 @@ import TypographyContainer from "@/components/ui/TypographyContainer";
 import Button from "@/components/ui/Button";
 import ArtikelCard from "@/components/ui/ArtikelCard";
 import { getArtikels } from "@/lib/api/artikel";
+import NextImage from "../ui/NextImage";
 
 export default async function ArtikelSection() {
   const { featured, articles } = await getArtikels(1, 4);
@@ -19,7 +20,30 @@ export default async function ArtikelSection() {
   }
 
   return (
-    <section className="relative w-full overflow-hidden bg-white py-16">
+    <section className="relative w-full overflow-hidden bg-white pt-10 pb-26">
+      {/* dekorasi */}
+      <NextImage
+        src="/images/vector-artikel.svg"
+        alt="dekorasi"
+        width={720}
+        height={0}
+        wrapperClassName="hidden md:block absolute left-[-17vw] bottom-[-35vh] -translate-y-1/2 z-[0]"
+      />
+      <NextImage
+        src="/images/vector-artikel.svg"
+        alt="dekorasi"
+        width={700}
+        height={0}
+        wrapperClassName="hidden md:block absolute right-[-15vw] top-[35vh] -translate-y-1/2 z-[0] rotate-[-10deg]"
+      />
+      {/* <NextImage
+        src="/images/vector-artikel.svg"
+        alt="dekorasi"
+        width={800}
+        height={200}
+        wrapperClassName="block md:hidden absolute left-[0] bottom-[0] -translate-y-1/2 z-[0]"
+        imageClassName="!w-[800px] !h-[200px]"
+      /> */}
       {/* ── Judul ── */}
       <TypographyContainer
         as="div"
@@ -41,6 +65,7 @@ export default async function ArtikelSection() {
             strokeColor="white"
             shadow="sm"
             shadowColor="#00000040"
+            className="!text-[48px] md:!text-[64px]"
           >
             S
           </Typography>
@@ -55,6 +80,7 @@ export default async function ArtikelSection() {
             strokeColor="white"
             shadow="sm"
             shadowColor="#00000040"
+            className="!text-[48px] md:!text-[64px]"
           >
             eputar
           </Typography>
@@ -71,6 +97,7 @@ export default async function ArtikelSection() {
             strokeColor="white"
             shadow="sm"
             shadowColor="#00000040"
+            className="!text-[48px] md:!text-[64px]"
           >
             A
           </Typography>
@@ -85,6 +112,7 @@ export default async function ArtikelSection() {
             strokeColor="white"
             shadow="sm"
             shadowColor="#00000040"
+            className="!text-[48px] md:!text-[64px]"
           >
             rtikel
           </Typography>
@@ -97,10 +125,14 @@ export default async function ArtikelSection() {
           {/* Card Featured — terbaru ke-1 */}
           <ArtikelCard artikel={featuredArtikel} featured />
 
-          {/* 2 Card Kecil — terbaru ke-2 & ke-3 */}
           <div className="flex flex-col gap-4">
-            {others.map((artikel) => (
-              <ArtikelCard key={artikel.slug} artikel={artikel} />
+            {others.map((artikel, index) => (
+              <div
+                key={artikel.slug}
+                className={index === 1 ? "hidden md:block" : ""}
+              >
+                <ArtikelCard artikel={artikel} />
+              </div>
             ))}
           </div>
         </div>
