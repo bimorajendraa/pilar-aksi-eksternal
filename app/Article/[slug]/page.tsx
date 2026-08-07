@@ -113,7 +113,7 @@ export default async function ArtikelDetailPage({
 
         {/* Konten artikel (HTML, sudah disanitize di backend) */}
         <div
-          className="prose prose-lg max-w-none text-neutral-700"
+          className="artikel-content max-w-none text-neutral-600"
           dangerouslySetInnerHTML={{ __html: artikel.content }}
         />
       </TypographyContainer>
