@@ -1,92 +1,30 @@
-"use client";
-
-import * as React from "react";
 import Typography from "@/components/ui/Typography";
 import TypographyContainer from "@/components/ui/TypographyContainer";
 import ArtikelCard from "@/components/ui/ArtikelCard";
 import ArtikelHeroCarousel from "@/components/ui/ArtikelHeroCarousel";
-import Pagination from "@/components/ui/Pagination";
-import { Artikel } from "@/types/artikel";
+import ArtikelPagination from "@/components/ui/ArtikelPagination";
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
+import { getArtikels, getArtikelsThisWeek } from "@/lib/api/artikel";
 
 const ITEMS_PER_PAGE = 4;
 
-// Ganti dengan getArtikels() dari lib/api/artikel.ts saat API sudah siap
-const dummyArtikels: Artikel[] = [
-  {
-    title: "Ekonomi Digital Roblox Melalui User-Generated Content",
-    slug: "ekonomi-digital-roblox",
-    category: "Teknologi Keuangan",
-    published_at: { label: "14 Mei 2026" },
-    cover_image: { url: "/images/artikel-1.webp", alt: "Artikel 1" },
-    author: { name: "Lorem Ipsum" },
-    editor: null,
-    content: "",
-  },
-  {
-    title: "Dampak Kecerdasan Buatan pada Game Interaktif",
-    slug: "dampak-ai-game-interaktif",
-    category: "Sains Teknologi",
-    published_at: { label: "16 Mei 2026" },
-    cover_image: { url: "/images/artikel-2.webp", alt: "Artikel 2" },
-    author: { name: "Lorem Ipsum" },
-    editor: null,
-    content: "",
-  },
-  {
-    title: "Tren Desain Game Berbasis Virtual Reality",
-    slug: "tren-desain-game-vr",
-    category: "Desain Pengalaman Pengguna",
-    published_at: { label: "17 Mei 2026" },
-    cover_image: { url: "/images/artikel-3.webp", alt: "Artikel 3" },
-    author: { name: "Lorem Ipsum" },
-    editor: null,
-    content: "",
-  },
-  {
-    title: "Analisis Pertumbuhan Pasar Game Mobile",
-    slug: "analisis-pasar-game-mobile",
-    category: "Bisnis Pemasaran",
-    published_at: { label: "18 Mei 2026" },
-    cover_image: { url: "/images/artikel-4.webp", alt: "Artikel 4" },
-    author: { name: "Lorem Ipsum" },
-    editor: null,
-    content: "",
-  },
-  {
-    title: "Masa Depan Augmented Reality dalam Pendidikan",
-    slug: "ar-dalam-pendidikan",
-    category: "Teknologi Pendidikan",
-    published_at: { label: "19 Mei 2026" },
-    cover_image: { url: "/images/artikel-5.webp", alt: "Artikel 5" },
-    author: { name: "Lorem Ipsum" },
-    editor: null,
-    content: "",
-  },
-  {
-    title: "Keamanan Siber di Era Digital",
-    slug: "keamanan-siber-era-digital",
-    category: "Keamanan Digital",
-    published_at: { label: "20 Mei 2026" },
-    cover_image: { url: "/images/artikel-6.webp", alt: "Artikel 6" },
-    author: { name: "Lorem Ipsum" },
-    editor: null,
-    content: "",
-  },
-];
+export const metadata = {
+  title: "Artikel — Pilar Aksi",
+};
 
-// Artikel keluaran minggu ini (misal 2 artikel terbaru)
-const thisWeekArtikels = dummyArtikels.slice(0, 2);
+type ArtikelPageProps = {
+  searchParams: Promise<{ page?: string }>;
+};
 
-export default function ArticlePage() {
-  const [currentPage, setCurrentPage] = React.useState(1);
+export default async function ArtikelPage({ searchParams }: ArtikelPageProps) {
+  const { page } = await searchParams;
+  const currentPage = Math.max(1, Number(page) || 1);
 
-  const totalPages = Math.ceil(dummyArtikels.length / ITEMS_PER_PAGE);
-  const paginatedArtikels = dummyArtikels.slice(
-    (currentPage - 1) * ITEMS_PER_PAGE,
-    currentPage * ITEMS_PER_PAGE,
-  );
+  const [{ articles, totalPages }, thisWeekArtikels] = await Promise.all([
+    getArtikels(currentPage, ITEMS_PER_PAGE),
+    getArtikelsThisWeek(),
+  ]);
 
   return (
     <main className="relative bg-white min-h-screen">
@@ -108,7 +46,7 @@ export default function ArticlePage() {
         paddingY="xl"
         className="flex flex-col gap-10"
       >
-        {/* ── Hero Carousel ── */}
+        {/* ── Hero Carousel: artikel minggu ini ── */}
         <ArtikelHeroCarousel artikels={thisWeekArtikels} />
 
         {/* ── Heading Seputar Artikel ── */}
@@ -180,20 +118,16 @@ export default function ArticlePage() {
 
         {/* ── Grid Artikel ── */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
-          {paginatedArtikels.map((artikel) => (
+          {articles.map((artikel) => (
             <ArtikelCard key={artikel.slug} artikel={artikel} size="lg" />
           ))}
         </div>
 
         {/* ── Pagination ── */}
-        <Pagination
+        <ArtikelPagination
           currentPage={currentPage}
           totalPages={totalPages}
-          onPageChange={(page) => {
-            setCurrentPage(page);
-            window.scrollTo({ top: 0, behavior: "smooth" });
-          }}
-          className="mb-0"
+          basePath="/Article"
         />
       </TypographyContainer>
       <Footer />

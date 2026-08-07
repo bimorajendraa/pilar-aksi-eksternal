@@ -1,18 +1,44 @@
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import Typography from "@/components/ui/Typography";
 import TypographyContainer from "@/components/ui/TypographyContainer";
 import NextImage from "@/components/ui/NextImage";
 import { getArtikelBySlug } from "@/lib/api/artikel";
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
+import type { Metadata } from "next";
+
+type ArtikelDetailPageProps = {
+  params: Promise<{ slug: string }>;
+};
+
+export async function generateMetadata({
+  params,
+}: ArtikelDetailPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const artikel = await getArtikelBySlug(slug);
+
+  if (!artikel) {
+    return { title: "Artikel tidak ditemukan — Pilar Aksi" };
+  }
+
+  return {
+    title: `${artikel.title} — Pilar Aksi`,
+    openGraph: artikel.cover_image.url
+      ? { images: [artikel.cover_image.url] }
+      : undefined,
+  };
+}
 
 export default async function ArtikelDetailPage({
   params,
-}: {
-  params: { slug: string };
-}) {
+}: ArtikelDetailPageProps) {
   const { slug } = await params;
   const artikel = await getArtikelBySlug(slug);
+
+  if (!artikel) {
+    notFound();
+  }
 
   return (
     <main className="bg-white min-h-screen">
@@ -85,7 +111,7 @@ export default async function ArtikelDetailPage({
           />
         </div>
 
-        {/* Konten artikel (HTML) */}
+        {/* Konten artikel (HTML, sudah disanitize di backend) */}
         <div
           className="prose prose-lg max-w-none text-neutral-700"
           dangerouslySetInnerHTML={{ __html: artikel.content }}

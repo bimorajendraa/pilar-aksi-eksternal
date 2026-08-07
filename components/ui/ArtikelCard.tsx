@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import { Calendar } from "lucide-react";
 import Typography from "@/components/ui/Typography";
@@ -27,13 +28,13 @@ export default function ArtikelCard({
         }`}
       >
         {/* Background image */}
-        <NextImage
-          src={artikel.cover_image.url}
+        <img
+          src={artikel.cover_image.url || "/images/placeholder.webp"}
           alt={artikel.cover_image.alt}
-          fill
-          wrapperClassName="absolute inset-0"
-          imageClassName="object-cover group-hover:scale-105 transition-transform duration-500"
-          showSkeleton={true}
+          onError={(e) => {
+            e.currentTarget.src = "/images/placeholder.webp";
+          }}
+          className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
         />
 
         {/* Overlay gradient */}
