@@ -32,8 +32,16 @@ export default function FeaturedCard({
             rounded="2xl"
             className="relative z-10 flex flex-col md:flex-row overflow-hidden mb-14"
         >
-            <div className="w-full md:w-[613px] flex-shrink-0">
-                <NextImage src={imageSrc} alt="" ratio="16/9" showSkeleton={true} />
+            <div className="w-full md:w-[50%] flex-shrink-0 flex self-stretch aspect-video md:aspect-auto">
+                <NextImage
+                    src={imageSrc}
+                    alt="Featured Image"
+                    width={1000}
+                    height={1000}
+                    showSkeleton={true}
+                    wrapperClassName="w-full h-full object-cover"
+                    imageClassName="w-full h-full object-cover"
+                />
             </div>
 
             <Card.Body className="flex flex-col justify-center gap-4 p-6 md:px-10 md:pb-10 md:pt-0">
@@ -60,6 +68,7 @@ export default function FeaturedCard({
                         rounded="lg"
                         rightIcon={<span>›</span>}
                         onClick={onOpenCollection}
+                        className="w-full"
                     >
                         {buttonLabel}
                     </Button>
