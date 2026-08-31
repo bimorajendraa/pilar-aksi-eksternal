@@ -49,7 +49,6 @@ export default function FeaturedCard({
                     variant="h3"
                     font="coolvetica"
                     italic
-                    weight="bold"
                     isGradient
                     gradientPreset="blue-vertical"
                     className="leading-tight !mt-0 !pt-0"
