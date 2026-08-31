@@ -3,7 +3,7 @@
 import * as React from "react";
 import Typography from "@/components/ui/Typography";
 import NextImage from "../../ui/NextImage";
-import { CircleX, ChevronLeft, ChevronRight } from "lucide-react";
+import { CircleX, ArrowRight, ArrowLeft } from "lucide-react";
 import type { CollectionItem } from "./types";
 
 type ItemDetailModalProps = {
@@ -45,7 +45,7 @@ export default function ItemDetailModal({
 
     return (
         <div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4 md:p-8"
+            className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm bg-black/50 p-4 md:p-8"
             onClick={(e) => {
                 if (e.target === e.currentTarget) {
                     onClose();
@@ -59,7 +59,7 @@ export default function ItemDetailModal({
                 {/* Sticky header */}
                 <div className="sticky top-0 z-10 bg-white px-6 py-5 flex items-center justify-between gap-4">
                     <Typography
-                        variant="h5"
+                        variant="h4"
                         font="body"
                         weight="bold"
                         className="!text-neutral-900 leading-tight"
@@ -70,9 +70,9 @@ export default function ItemDetailModal({
                     <button
                         onClick={onClose}
                         aria-label="Tutup"
-                        className="flex-shrink-0 rounded-full border border-neutral-300 p-1.5 hover:bg-neutral-100 transition-colors"
+                        className="flex-shrink-0 rounded-full p-1.5"
                     >
-                        <CircleX className="w-5 h-5 text-neutral-700" />
+                        <CircleX className="w-7 h-7 text-neutral-700" />
                     </button>
 
                     <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-blue-dark-300 to-blue-light-300" />
@@ -96,14 +96,14 @@ export default function ItemDetailModal({
                                     aria-label="Foto sebelumnya"
                                     className="absolute left-4 top-1/2 -translate-y-1/2 bg-blue-dark-300 hover:bg-blue-dark-400 rounded-xl p-2.5 shadow-md transition-colors"
                                 >
-                                    <ChevronLeft className="w-5 h-5 text-white" />
+                                    <ArrowLeft className="w-5 h-5 text-white" />
                                 </button>
                                 <button
                                     onClick={goToNextImage}
                                     aria-label="Foto selanjutnya"
                                     className="absolute right-4 top-1/2 -translate-y-1/2 bg-blue-dark-300 hover:bg-blue-dark-400 rounded-xl p-2.5 shadow-md transition-colors"
                                 >
-                                    <ChevronRight className="w-5 h-5 text-white" />
+                                    <ArrowRight className="w-5 h-5 text-white" />
                                 </button>
 
                                 {/* Dots indicator */}
@@ -113,11 +113,10 @@ export default function ItemDetailModal({
                                             key={idx}
                                             onClick={() => setCurrentImageIndex(idx)}
                                             aria-label={`Ke foto ${idx + 1}`}
-                                            className={`h-2 rounded-full transition-all ${
-                                                idx === currentImageIndex
+                                            className={`h-2 rounded-full transition-all ${idx === currentImageIndex
                                                     ? "w-6 bg-blue-dark-300"
                                                     : "w-2 bg-white/70"
-                                            }`}
+                                                }`}
                                         />
                                     ))}
                                 </div>

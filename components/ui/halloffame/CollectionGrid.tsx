@@ -46,7 +46,8 @@ export default function CollectionGrid({ items, onItemClick }: CollectionGridPro
                             <Typography
                                 font="body"
                                 weight="bold"
-                                className="!text-blue-dark-300"
+                                isGradient
+                                gradientPreset="blue-vertical"
                             >
                                 {item.nama}
                             </Typography>

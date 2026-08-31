@@ -69,7 +69,12 @@ export default function FeaturedCard({
                         onClick={onOpenCollection}
                         className="w-full"
                     >
-                        {buttonLabel}
+                        <Typography
+                            variant="body-small"
+                            font="body"
+                        >
+                            {buttonLabel}
+                        </Typography>
                     </Button>
                 </div>
             </Card.Body>

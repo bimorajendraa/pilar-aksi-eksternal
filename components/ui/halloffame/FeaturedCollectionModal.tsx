@@ -30,7 +30,7 @@ export default function FeaturedCollectionModal({
 
     return (
         <div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4 md:p-8"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4 md:p-8"
             onClick={(e) => {
                 // Tutup modal hanya jika klik terjadi di area backdrop, bukan di dalam panel
                 if (e.target === e.currentTarget) {
@@ -59,10 +59,7 @@ export default function FeaturedCollectionModal({
                             variant="h4"
                             font="coolvetica"
                             italic
-                            weight="bold"
-                            isGradient
-                            gradientPreset="blue-vertical"
-                            className="!mt-1 !leading-tight"
+                            className="!mt-1 !leading-tight text-blue-dark-200"
                         >
                             {title}&nbsp;
                         </Typography>
@@ -71,9 +68,9 @@ export default function FeaturedCollectionModal({
                     <button
                         onClick={onClose}
                         aria-label="Tutup"
-                        className="flex-shrink-0 rounded-full border border-neutral-300 p-1.5 hover:bg-neutral-100 transition-colors"
+                        className="flex-shrink-0 rounded-full p-1.5"
                     >
-                        <CircleX className="w-5 h-5 text-neutral-700" />
+                        <CircleX className="w-7 h-7 text-neutral-700" />
                     </button>
 
                     <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-blue-dark-300 to-blue-light-300" />
@@ -102,10 +99,10 @@ export default function FeaturedCollectionModal({
 
                                 <div className="h-[3px] w-full bg-gradient-to-r from-blue-dark-300 to-blue-light-300" />
 
-                                <Card.Body className="py-4 px-4 bg-blue-light-50">
+                                <Card.Body className="py-4 px-4 bg-blue-dark-50">
                                     <Typography
-                                        font="body"
-                                        weight="bold"
+                                        variant="h5"
+                                        font="coolvetica"
                                         className="!text-neutral-600"
                                     >
                                         {item.nama}
@@ -113,7 +110,7 @@ export default function FeaturedCollectionModal({
                                     <Typography
                                         variant="body-small"
                                         font="body"
-                                        className="!text-neutral-500 mt-1 line-clamp-2"
+                                        className="text-neutral-500 mt-1 line-clamp-2"
                                     >
                                         {item.deskripsi}
                                     </Typography>

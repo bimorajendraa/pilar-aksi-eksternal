@@ -55,7 +55,7 @@ export default function HallOfFameSection() {
                     imageSrc="/images/foto-bersama-hmsi-1.png"
                     title="Our Journey So Far"
                     description="Rekam jejak tentang bagaimana mimpi sederhana berkembang menjadi karya nyata melalui dedikasi dan kerja keras tanpa henti."
-                    buttonLabel="Buka Koleksi"
+                    buttonLabel="Open Collection"
                     onOpenCollection={() => setIsFeaturedModalOpen(true)}
                 />
 
