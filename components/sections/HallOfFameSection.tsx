@@ -26,7 +26,10 @@ export default function HallOfFameSection() {
                 { length: 5 },
                 (_, j) => `/images/gallery-${((i + j) % 9) + 1}.webp`
             ),
-            deskripsi: "Lorem ipsum dolor sit amet.",
+            deskripsi: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do \
+                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad \
+                        minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip \
+                        ex ea commodo consequat.",
             href: `/Collection/Item?id=${i + 1}`,
         })
     );

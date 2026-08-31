@@ -124,17 +124,17 @@ export default function ItemDetailModal({
                         )}
                     </div>
 
-                    {/* Event Details */}
-                    <div className="m-6 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-dark-300 p-6 md:p-8">
+                    {/* Event Details | Background gradient bagus -> bg-gradient-to-br from-blue-500 to-blue-dark-300 */}
+                    <div className="m-6 bg-blue-dark-100 rounded-2xl  p-6 md:p-6">
                         <Typography
-                            variant="h5"
+                            variant="h6"
                             font="body"
                             weight="bold"
-                            className="!text-white mb-3"
+                            className="!text-white mb-3 md:!text-2xl"
                         >
                             {detailsLabel}
                         </Typography>
-                        <Typography font="body" className="!text-white/90">
+                        <Typography variant="body-small" font="body" className="!text-white/90 md:!text-lg">
                             {item.deskripsi}
                         </Typography>
                     </div>
