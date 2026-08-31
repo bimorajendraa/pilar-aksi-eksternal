@@ -4,6 +4,7 @@ import Typography from "@/components/ui/Typography";
 import NextImage from "../../ui/NextImage";
 import Button from "@/components/ui/Button";
 import Card from "../../ui/Card";
+import { ChevronRight } from "lucide-react";
 
 type FeaturedCardProps = {
     imageSrc: string;
@@ -65,9 +66,9 @@ export default function FeaturedCard({
                         variant="primary"
                         size="md"
                         rounded="lg"
-                        rightIcon={<span>›</span>}
+                        rightIcon={<ChevronRight className="w-5 h-5" />}
                         onClick={onOpenCollection}
-                        className="w-full"
+                        className="w-full bg-blue-dark-200 hover:bg-blue-dark-300"
                     >
                         <Typography
                             variant="body-small"

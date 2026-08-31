@@ -70,7 +70,7 @@ export default function FeaturedCollectionModal({
                         aria-label="Tutup"
                         className="flex-shrink-0 rounded-full p-1.5"
                     >
-                        <CircleX className="w-7 h-7 text-neutral-700" />
+                        <CircleX className="w-8 h-8 text-neutral-600" />
                     </button>
 
                     <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-blue-dark-300 to-blue-light-300" />
