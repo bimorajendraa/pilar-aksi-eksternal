@@ -73,6 +73,7 @@ export default function FeaturedCard({
                         <Typography
                             variant="body-small"
                             font="body"
+                            className="text-neutral-50"
                         >
                             {buttonLabel}
                         </Typography>
