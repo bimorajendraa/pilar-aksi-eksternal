@@ -6,6 +6,7 @@ import Typography from "@/components/ui/Typography";
 import TypographyContainer from "@/components/ui/TypographyContainer";
 import NextImage from "@/components/ui/NextImage";
 import Button from "@/components/ui/Button";
+import { X } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 
 const departemen = [
@@ -27,6 +28,17 @@ const departemen = [
       "Penyusunan LPJ HMSI",
       "Pengajuan Dana",
     ],
+    goalsSkills:
+      "Cultivate high-level strategic leadership and administrative excellence. Members develop sharp decision-making skills, crisis management, financial transparency, and the ability to align diverse teams toward a unified vision.",
+    anggota: [
+      { foto: "/images/placeholder.webp", nama: "placeholder_name", jabatan: "President" },
+      { foto: "/images/placeholder.webp", nama: "placeholder_name", jabatan: "Vice President" },
+      { foto: "/images/placeholder.webp", nama: "placeholder_name", jabatan: "Vice President" },
+      { foto: "/images/placeholder.webp", nama: "placeholder_name", jabatan: "General Secretary" },
+      { foto: "/images/placeholder.webp", nama: "placeholder_name", jabatan: "General Secretary" },
+      { foto: "/images/placeholder.webp", nama: "placeholder_name", jabatan: "General Treasurer" },
+      { foto: "/images/placeholder.webp", nama: "placeholder_name", jabatan: "General Treasurer" },
+    ],
     foto: "/images/dept-foto-1.webp",
     logo: "/images/logo-dept-biru-1.svg",
   },
@@ -41,6 +53,16 @@ const departemen = [
       "Hari-hari di .. (Internalisasi)",
       "HRD Apreciation",
       "GERAH (Rapat Internal)",
+    ],
+    goalsSkills:
+      "Build a resilient, highly competent, and adaptive generation of leaders. Members gain invaluable expertise in human capital management, leadership coaching, performance evaluation, and conflict mediation.",
+    anggota: [
+      { foto: "/images/placeholder.webp", nama: "placeholder_name", jabatan: "Kepala Departemen" },
+      { foto: "/images/placeholder.webp", nama: "placeholder_name", jabatan: "Wakil Kepala Departemen" },
+      { foto: "/images/placeholder.webp", nama: "placeholder_name", jabatan: "Sekretaris Departemen" },
+      { foto: "/images/placeholder.webp", nama: "placeholder_name", jabatan: "Staff Ahli" },
+      { foto: "/images/placeholder.webp", nama: "placeholder_name", jabatan: "Staff Ahli" },
+      ...new Array(11).fill({ foto: "/images/placeholder.webp", nama: "placeholder_name", jabatan: "Staff" }),
     ],
     foto: "/images/dept-foto-3.webp",
     logo: "/images/logo-dept-biru-3.svg",
@@ -57,6 +79,19 @@ const departemen = [
       "Company Visit",
     ],
     agenda: ["HMSI Connect", "English Clinic", "EAsikin", "EAdventure"],
+    goalsSkills:
+      "Build a robust professional network and bridge the gap between students, alumni, and the industrial world. Members hone their skills in stakeholder management, B2B negotiation, professional communication, and strategic partnership building.",
+    anggota: [
+      { foto: "/images/placeholder.webp", nama: "placeholder_name", jabatan: "Kepala Departemen" },
+      { foto: "/images/placeholder.webp", nama: "placeholder_name", jabatan: "Wakil Kepala Departemen" },
+      { foto: "/images/placeholder.webp", nama: "placeholder_name", jabatan: "Wakil Kepala Departemen" },
+      { foto: "/images/placeholder.webp", nama: "placeholder_name", jabatan: "Sekretaris Departemen" },
+      //kode di bawah itu placeholder utk masing-masing staff dan staff ahli. 
+      // kalau mau nambahin member, tinggal copy penamaannya kyk di atas 
+      // (ganti image source dan nama)
+      ...new Array(4).fill({ foto: "/images/placeholder.webp", nama: "placeholder_name", jabatan: "Staff Ahli" }),
+      ...new Array(9).fill({ foto: "/images/placeholder.webp", nama: "placeholder_name", jabatan: "Staff" }),
+    ],
     foto: "/images/dept-foto-2.webp",
     logo: "/images/logo-dept-biru-2.svg",
   },
@@ -72,6 +107,18 @@ const departemen = [
       "IAdventure",
       "Apa Kabar HMSI",
       "COMMEX",
+    ],
+    goalsSkills:
+      "Maintain high retention, mitigate student burnout, and foster a strong sense of belonging. Members refine their skills in mega-event organizing, community building, talent curation, and dynamic internal communication.",
+    anggota: [
+      { foto: "/images/placeholder.webp", nama: "placeholder_name", jabatan: "Kepala Departemen" },
+      { foto: "/images/placeholder.webp", nama: "placeholder_name", jabatan: "Wakil Kepala Departemen" },
+      { foto: "/images/placeholder.webp", nama: "placeholder_name", jabatan: "Sekretaris Departemen" },
+      //kode di bawah itu placeholder utk masing-masing staff dan staff ahli. 
+      // kalau mau nambahin member, tinggal copy penamaannya kyk di atas 
+      // (ganti image source dan nama)
+      ...new Array(5).fill({ foto: "/images/placeholder.webp", nama: "placeholder_name", jabatan: "Staff Ahli" }),
+      ...new Array(10).fill({ foto: "/images/placeholder.webp", nama: "placeholder_name", jabatan: "Staff" }),
     ],
     foto: "/images/dept-foto-4.webp",
     logo: "/images/logo-dept-biru-4.svg",
@@ -92,6 +139,18 @@ const departemen = [
       "IMUpdate",
       "Internalisasi",
     ],
+    goalsSkills:
+      "Deliver impactful visual storytelling and elevate the organization's digital presence. Members master digital marketing, graphic design, copywriting, and public relations, translating complex information into engaging content.",
+    anggota: [
+      { foto: "/images/placeholder.webp", nama: "placeholder_name", jabatan: "Kepala Departemen" },
+      { foto: "/images/placeholder.webp", nama: "placeholder_name", jabatan: "Wakil Kepala Departemen" },
+      { foto: "/images/placeholder.webp", nama: "placeholder_name", jabatan: "Sekretaris Departemen" },
+      //kode di bawah itu placeholder utk masing-masing staff dan staff ahli. 
+      // kalau mau nambahin member, tinggal copy penamaannya kyk di atas 
+      // (ganti image source dan nama)
+      ...new Array(8).fill({ foto: "/images/placeholder.webp", nama: "placeholder_name", jabatan: "Staff Ahli" }),
+      ...new Array(15).fill({ foto: "/images/placeholder.webp", nama: "placeholder_name", jabatan: "Staff" }),
+    ],
     foto: "/images/dept-foto-5.webp",
     logo: "/images/logo-dept-biru-5.svg",
   },
@@ -102,6 +161,18 @@ const departemen = [
       "Social Development Department berfokus pada pengembangan kepedulian sosial dan pengabdian masyarakat. Departemen ini bertanggung jawab dalam perencanaan dan pelaksanaan kegiatan sosial yang melibatkan mahasiswa Sistem Informasi sebagai bentuk kontribusi nyata kepada masyarakat.\n\nSelain itu, departemen ini juga mengoordinasikan kegiatan internal yang berkaitan dengan nilai kemanusiaan dan solidaritas sosial.",
     programKerja: ["SINERGI", "SIMETRI", "SocioTrip"],
     agenda: ["ASIK", "AKSI", "SocioBank", "SocioSkuy"],
+    goalsSkills:
+      "Cultivate social empathy and utilize technology for the greater good. Members develop expertise in community project management, CSR mapping, empathetic leadership, and sustainable program execution.",
+    anggota: [
+      { foto: "/images/placeholder.webp", nama: "placeholder_name", jabatan: "Kepala Departemen" },
+      { foto: "/images/placeholder.webp", nama: "placeholder_name", jabatan: "Wakil Kepala Departemen" },
+      { foto: "/images/placeholder.webp", nama: "placeholder_name", jabatan: "Sekretaris Departemen" },
+      //kode di bawah itu placeholder utk masing-masing staff dan staff ahli. 
+      // kalau mau nambahin member, tinggal copy penamaannya kyk di atas 
+      // (ganti image source dan nama)
+      ...new Array(3).fill({ foto: "/images/placeholder.webp", nama: "placeholder_name", jabatan: "Staff Ahli" }),
+      ...new Array(11).fill({ foto: "/images/placeholder.webp", nama: "placeholder_name", jabatan: "Staff" }),
+    ],
     foto: "/images/dept-foto-6.webp",
     logo: "/images/logo-dept-biru-6.svg",
   },
@@ -117,6 +188,18 @@ const departemen = [
       "RTA Info Center",
       "RTA Healing",
     ],
+    goalsSkills:
+      "Foster a culture of analytical thinking and scientific problem-solving. Members acquire profound skills in research methodology, critical data analysis, academic writing, and project pitching.",
+    anggota: [
+      { foto: "/images/placeholder.webp", nama: "placeholder_name", jabatan: "Kepala Departemen" },
+      { foto: "/images/placeholder.webp", nama: "placeholder_name", jabatan: "Wakil Kepala Departemen" },
+      { foto: "/images/placeholder.webp", nama: "placeholder_name", jabatan: "Sekretaris Departemen" },
+      //kode di bawah itu placeholder utk masing-masing staff dan staff ahli. 
+      // kalau mau nambahin member, tinggal copy penamaannya kyk di atas 
+      // (ganti image source dan nama)
+      ...new Array(4).fill({ foto: "/images/placeholder.webp", nama: "placeholder_name", jabatan: "Staff Ahli" }),
+      ...new Array(11).fill({ foto: "/images/placeholder.webp", nama: "placeholder_name", jabatan: "Staff" }),
+    ],
     foto: "/images/dept-foto-7.webp",
     logo: "/images/logo-dept-biru-7.svg",
   },
@@ -127,6 +210,14 @@ const departemen = [
       "Manage Department merupakan departemen yang bertanggung jawab dalam proses regenerasi dan pembentukan karakter anggota HMSI. Departemen ini mengelola rangkaian program kaderisasi yang sistematis untuk menanamkan nilai, budaya organisasi, serta kepemimpinan yang berintegritas.\n\nMelalui proses pembinaan yang terstruktur, Kaderisasi memastikan keberlanjutan organisasi dengan menyiapkan kader yang kompeten dan siap melanjutkan estafet kepemimpinan.",
     programKerja: ["Manage", "Pembekalan Manage"],
     agenda: ["Formasi", "Rakom Elder", "Rapat Internal", "Internalisasi"],
+    goalsSkills: "placeholder",
+    anggota: [
+      { foto: "/images/placeholder.webp", nama: "placeholder_name", jabatan: "Kepala Departemen" },
+      { foto: "/images/placeholder.webp", nama: "placeholder_name", jabatan: "Wakil Kepala Departemen" },
+      { foto: "/images/placeholder.webp", nama: "placeholder_name", jabatan: "Sekretaris Departemen" },
+      { foto: "/images/placeholder.webp", nama: "placeholder_name", jabatan: "Staff Ahli" },
+      { foto: "/images/placeholder.webp", nama: "placeholder_name", jabatan: "Staff" },
+    ],
     foto: "/images/dept-foto-8.webp",
     logo: "/images/logo-dept-biru-8.svg",
   },
@@ -145,6 +236,18 @@ const departemen = [
       "Health Campaign",
       "Beasiswa Alumni SI",
     ],
+    goalsSkills:
+      "Ensure no student is left behind due to academic or financial barriers. Members build deep competencies in crisis advocacy, active listening, policy navigation, data-driven mapping, and peer-to-peer counseling.",
+    anggota: [
+      { foto: "/images/placeholder.webp", nama: "placeholder_name", jabatan: "Kepala Departemen" },
+      { foto: "/images/placeholder.webp", nama: "placeholder_name", jabatan: "Wakil Kepala Departemen" },
+      { foto: "/images/placeholder.webp", nama: "placeholder_name", jabatan: "Sekretaris Departemen" },
+      //kode di bawah itu placeholder utk masing-masing staff dan staff ahli. 
+      // kalau mau nambahin member, tinggal copy penamaannya kyk di atas 
+      // (ganti image source dan nama)
+      ...new Array(3).fill({ foto: "/images/placeholder.webp", nama: "placeholder_name", jabatan: "Staff Ahli" }),
+      ...new Array(11).fill({ foto: "/images/placeholder.webp", nama: "placeholder_name", jabatan: "Staff" }),
+    ],
     foto: "/images/dept-foto-9.webp",
     logo: "/images/logo-dept-biru-9.svg",
   },
@@ -162,6 +265,18 @@ const departemen = [
       "ES Fundraise",
       "ES Merch",
     ],
+    goalsSkills:
+      "Instill a robust entrepreneurial mindset. Members acquire practical, real-world skills in financial modeling, B2C sales, marketing strategy, supply chain basics, and sustainable business management.",
+    anggota: [
+      { foto: "/images/placeholder.webp", nama: "placeholder_name", jabatan: "Kepala Departemen" },
+      { foto: "/images/placeholder.webp", nama: "placeholder_name", jabatan: "Wakil Kepala Departemen" },
+      { foto: "/images/placeholder.webp", nama: "placeholder_name", jabatan: "Sekretaris Departemen" },
+      //kode di bawah itu placeholder utk masing-masing staff dan staff ahli. 
+      // kalau mau nambahin member, tinggal copy penamaannya kyk di atas 
+      // (ganti image source dan nama)
+      ...new Array(5).fill({ foto: "/images/placeholder.webp", nama: "placeholder_name", jabatan: "Staff Ahli" }),
+      ...new Array(12).fill({ foto: "/images/placeholder.webp", nama: "placeholder_name", jabatan: "Staff" }),
+    ],
     foto: "/images/dept-foto-10.webp",
     logo: "/images/logo-dept-biru-10.svg",
   },
@@ -174,8 +289,24 @@ export default function DepartemenContent() {
   const [activeId, setActiveId] = React.useState(
     idParam ? parseInt(idParam) : 1,
   );
+  const [selectedAnggota, setSelectedAnggota] = React.useState<{
+    foto: string;
+    nama: string;
+    jabatan: string;
+  } | null>(null);
 
   const activeDept = departemen.find((d) => d.id === activeId)!;
+
+  const jabatan =
+    activeDept.id === 1
+      ? ["President", "Vice President", "General Secretary", "General Treasurer"]
+      : [
+          "Kepala Departemen",
+          "Wakil Kepala Departemen",
+          "Sekretaris Departemen",
+          "Staff Ahli",
+          "Staff",
+        ];
 
   return (
     <TypographyContainer as="div" maxWidth="xl" paddingX="md" paddingY="lg">
@@ -331,7 +462,7 @@ export default function DepartemenContent() {
           </div>
 
           {/* Program Kerja + Agenda */}
-          <div className="flex flex-row gap-6 md:gap-12 -mt-7 md:mt-4">
+          <div className="flex flex-col gap-6 md:flex-row md:gap-12 md:mt-4">
             {/* Program Kerja */}
             <div className="flex flex-col gap-0 md:gap-3 flex-1">
               <Typography
@@ -406,6 +537,164 @@ export default function DepartemenContent() {
           </div>
         </div>
       </div>
+
+      {/* Goals & Skills Acquired */}
+      <div className="mt-10 md:mt-16">
+        <Typography
+          variant="h4"
+          font="coolvetica"
+          italic
+          color="neutral-600"
+          className="!text-[20px] md:!text-[30px]"
+        >
+          Goals &amp; Skills Acquired
+        </Typography>
+        <Typography
+          variant="body-large"
+          font="body"
+          color="neutral-600"
+          className="mt-2 !text-[14px] md:!text-[18px]"
+        >
+          {activeDept.goalsSkills}
+        </Typography>
+      </div>
+
+      {/* Daftar Kabinet & Staff */}
+      <div className="mt-10 md:mt-16">
+        <Typography
+          variant="h4"
+          font="coolvetica"
+          italic
+          color="neutral-600"
+          className="!text-[20px] md:!text-[30px]"
+        >
+          Daftar Kabinet &amp; Staff
+        </Typography>
+        <div className="mt-5 flex flex-col gap-8">
+          {jabatan.map((role) => {
+            const anggota = activeDept.anggota.filter(
+              (member) => member.jabatan === role,
+            );
+
+            if (anggota.length === 0) return null;
+
+            return (
+              <div key={role}>
+                <Typography
+                  variant="h5"
+                  font="coolvetica"
+                  italic
+                  color="neutral-600"
+                  className="!text-[18px] md:!text-[24px]"
+                >
+                  {role}
+                </Typography>
+                <div className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                  {anggota.map((member, index) => (
+                    <button
+                      type="button"
+                      onClick={() => setSelectedAnggota(member)}
+                      key={`${role}-${index}`}
+                      className="flex w-full items-center gap-3 rounded-xl border border-blue-dark-50 bg-white p-3 text-left shadow-sm transition-shadow hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-dark-300"
+                    >
+                      <NextImage
+                        src={member.foto}
+                        alt={member.nama}
+                        ratio="1/1"
+                        rounded="full"
+                        wrapperClassName="h-12 w-12 flex-shrink-0"
+                        imageClassName="object-cover"
+                        showSkeleton={false}
+                      />
+                      <div className="min-w-0">
+                        <Typography
+                          variant="body-small"
+                          font="body"
+                          weight="bold"
+                          color="neutral-600"
+                          className="truncate !text-[14px] md:!text-[16px]"
+                        >
+                          {member.nama}
+                        </Typography>
+                      </div>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      {selectedAnggota && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4"
+          role="presentation"
+          onClick={() => setSelectedAnggota(null)}
+        >
+          <div
+            className="relative max-h-[90vh] w-full max-w-md overflow-y-auto rounded-2xl bg-white p-5 shadow-xl md:p-7"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="anggota-dialog-title"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <button
+              type="button"
+              onClick={() => setSelectedAnggota(null)}
+              className="absolute right-4 top-4 rounded-full p-2 text-neutral-600 transition-colors hover:bg-blue-dark-50 hover:text-blue-dark-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-dark-300"
+              aria-label="Tutup detail anggota"
+              title="Tutup"
+            >
+              <X className="h-5 w-5" />
+            </button>
+
+            <div className="flex flex-col items-center gap-5 pt-2">
+              <NextImage
+                src={selectedAnggota.foto}
+                alt={selectedAnggota.nama}
+                ratio="3/4"
+                rounded="xl"
+                wrapperClassName="w-full max-w-[280px]"
+                imageClassName="object-cover"
+                showSkeleton={false}
+              />
+              <div className="w-full text-center">
+                <Typography
+                  as="h2"
+                  variant="h4"
+                  font="coolvetica"
+                  italic
+                  color="blue-dark-300"
+                  className="!text-[26px] md:!text-[32px]"
+                  id="anggota-dialog-title"
+                >
+                  {selectedAnggota.nama}
+                </Typography>
+                <Typography
+                  as="p"
+                  variant="body-large"
+                  font="body"
+                  weight="bold"
+                  color="neutral-600"
+                  className="mt-1 !text-[16px] md:!text-[18px]"
+                >
+                  {selectedAnggota.jabatan}
+                </Typography>
+                <Typography
+                  as="p"
+                  variant="body-small"
+                  font="body"
+                  color="blue-dark-300"
+                  className="mt-2 !text-[14px] md:!text-[16px]"
+                >
+                  {activeDept.nama}
+                </Typography>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </TypographyContainer>
   );
 }
